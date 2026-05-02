@@ -6,9 +6,9 @@ services:
     plan: free
     rootDir: backend
     buildCommand: |
-      composer install --no-dev --optimize-autoloader
-      php artisan config:clear
-      php artisan route:clear
+      composer install --no-dev --optimize-autoloader &&
+      php artisan config:clear &&
+      php artisan route:clear &&
       php artisan view:clear
     startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     healthCheckPath: /api/projects
@@ -23,8 +23,26 @@ services:
         value: pgsql
       - key: DB_SSLMODE
         value: require
-      # Las vars DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
-      # se agregan automáticamente desde la base de datos vinculada en Render.
+      - key: DB_HOST
+        fromDatabase:
+          name: rene-mejillon-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: rene-mejillon-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: rene-mejillon-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: rene-mejillon-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: rene-mejillon-db
+          property: password
 
 databases:
   - name: rene-mejillon-db
