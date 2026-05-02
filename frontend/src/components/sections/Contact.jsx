@@ -17,10 +17,9 @@ const CONTACT_INFO = [
 ]
 
 const SOCIALS = [
-  { Icon: FaGithub,   href: 'https://github.com/renemejillon',      label: 'GitHub'   },
+  { Icon: FaGithub,   href: 'https://github.com/rmsolutionstec',      label: 'GitHub'   },
   { Icon: FaLinkedin, href: 'https://linkedin.com/in/renemejillon', label: 'LinkedIn' },
-  { Icon: FaTwitter,  href: 'https://twitter.com/renemejillon',     label: 'Twitter'  },
-  { Icon: FaWhatsapp, href: 'https://wa.me/593990000000',           label: 'WhatsApp' },
+  { Icon: FaWhatsapp, href: 'https://wa.me/593981817493',           label: 'WhatsApp' },
 ]
 
 const SERVICES_OPTIONS = [
