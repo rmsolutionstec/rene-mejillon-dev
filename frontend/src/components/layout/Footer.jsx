@@ -18,7 +18,6 @@ const NAV_LINKS = [
 const SOCIAL = [
   { href: 'https://github.com/renemejillon',      Icon: FaGithub,   label: 'GitHub'   },
   { href: 'https://linkedin.com/in/renemejillon', Icon: FaLinkedin, label: 'LinkedIn' },
-  { href: 'https://twitter.com/renemejillon',     Icon: FaTwitter,  label: 'Twitter'  },
   { href: 'https://wa.me/593990000000',           Icon: FaWhatsapp, label: 'WhatsApp' },
 ]
 
