@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import CountUp from 'react-countup'
+import CountUpLib from 'react-countup'
+const CountUp = CountUpLib?.default ?? CountUpLib
 import { useInView } from 'react-intersection-observer'
 import {
   FaGithub, FaLinkedin, FaWhatsapp,

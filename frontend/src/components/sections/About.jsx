@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import CountUp from 'react-countup'
+import CountUpLib from 'react-countup'
+const CountUp = CountUpLib?.default ?? CountUpLib
 import {
   FaCode, FaRocket, FaHeart, FaAward,
   FaGithub, FaLinkedin,
