@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   CSS VARIABLES - Design System
+   ========================================= */
+:root {
+  --black-deep:      #0a0a0a;
+  --black-secondary: #121212;
+  --black-card:      #181818;
+  --gray-elegant:    #1f1f1f;
+  --gray-border:     #2a2a2a;
+  --red-main:        #ff1e1e;
+  --red-hover:       #cc0000;
+  --red-light:       #ff4444;
+  --white-text:      #f5f5f5;
+  --gray-text:       #a0a0a0;
+  --gray-dim:        #666666;
+
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', 'Inter', sans-serif;
+
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --radius-sm:  0.375rem;
+  --radius:     0.5rem;
+  --radius-md:  0.75rem;
+  --radius-lg:  1rem;
+  --radius-xl:  1.5rem;
+
+  --shadow-red:    0 0 20px rgba(255, 30, 30, 0.25);
+  --shadow-red-lg: 0 0 40px rgba(255, 30, 30, 0.45);
+  --shadow-card:   0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-hover:  0 16px 48px rgba(255, 30, 30, 0.15), 0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================
+   BASE RESETS & GLOBAL STYLES
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--black-deep);
+  color: var(--white-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--red-main);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-hover);
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(255, 30, 30, 0.3);
+  color: #fff;
+}
+
+/* =========================================
+   TYPOGRAPHY UTILITIES
+   ========================================= */
+@layer components {
+  .font-display  { font-family: var(--font-display); }
+  .text-gradient {
+    background: linear-gradient(135deg, #ff1e1e 0%, #ff6b6b 50%, #cc0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-white {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #cccccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-glow-red {
+    text-shadow: 0 0 15px rgba(255, 30, 30, 0.6), 0 0 30px rgba(255, 30, 30, 0.3);
+  }
+
+  /* =========================================
+     BUTTON COMPONENTS
+     ========================================= */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg font-semibold text-sm tracking-wide text-white transition-all duration-300;
+    background: linear-gradient(135deg, #ff1e1e 0%, #cc0000 100%);
+    box-shadow: 0 4px 15px rgba(255, 30, 30, 0.3);
+  }
+  .btn-primary:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 8px 30px rgba(255, 30, 30, 0.5);
+    background: linear-gradient(135deg, #ff4444 0%, #ff1e1e 100%);
+  }
+  .btn-primary:active { @apply translate-y-0; }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg font-semibold text-sm tracking-wide text-red-main border border-red-main transition-all duration-300;
+    background: transparent;
+  }
+  .btn-secondary:hover {
+    @apply text-white -translate-y-0.5;
+    background: rgba(255, 30, 30, 0.1);
+    box-shadow: 0 8px 25px rgba(255, 30, 30, 0.2);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg font-semibold text-sm tracking-wide text-gray-text border border-gray-border transition-all duration-300;
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    @apply text-white-text border-gray-dim -translate-y-0.5;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* =========================================
+     GLASS CARD
+     ========================================= */
+  .glass-card {
+    background: rgba(24, 24, 24, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 30, 30, 0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    transition: all var(--transition-normal);
+  }
+  .glass-card:hover {
+    border-color: rgba(255, 30, 30, 0.2);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .glass-card-dark {
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(42, 42, 42, 0.8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* =========================================
+     SECTION STYLES
+     ========================================= */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  /* =========================================
+     RED ACCENT LINE
+     ========================================= */
+  .red-line {
+    @apply w-16 h-1 rounded-full;
+    background: linear-gradient(90deg, #ff1e1e, #cc0000);
+    box-shadow: 0 0 10px rgba(255, 30, 30, 0.5);
+  }
+  .red-line-center {
+    @apply w-16 h-1 rounded-full mx-auto;
+    background: linear-gradient(90deg, #ff1e1e, #cc0000);
+    box-shadow: 0 0 10px rgba(255, 30, 30, 0.5);
+  }
+
+  /* =========================================
+     BADGE / TAG
+     ========================================= */
+  .tech-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-red-light border border-red-main/20;
+    background: rgba(255, 30, 30, 0.08);
+    transition: all var(--transition-fast);
+  }
+  .tech-badge:hover {
+    background: rgba(255, 30, 30, 0.15);
+    border-color: rgba(255, 30, 30, 0.4);
+  }
+
+  /* =========================================
+     INPUT STYLES
+     ========================================= */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg text-sm text-white-text outline-none transition-all duration-300;
+    background: rgba(31, 31, 31, 0.8);
+    border: 1px solid var(--gray-border);
+  }
+  .form-input::placeholder { color: var(--gray-dim); }
+  .form-input:focus {
+    border-color: var(--red-main);
+    box-shadow: 0 0 0 3px rgba(255, 30, 30, 0.12);
+  }
+
+  /* =========================================
+     GLOW EFFECTS
+     ========================================= */
+  .glow-red {
+    box-shadow: var(--shadow-red);
+  }
+  .glow-red-hover {
+    transition: box-shadow var(--transition-normal);
+  }
+  .glow-red-hover:hover {
+    box-shadow: var(--shadow-red-lg);
+  }
+
+  /* =========================================
+     ANIMATED GRADIENT BORDER
+     ========================================= */
+  .border-gradient-red {
+    position: relative;
+  }
+  .border-gradient-red::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,30,30,0.5), transparent, rgba(255,30,30,0.2));
+    z-index: -1;
+  }
+
+  /* =========================================
+     SKILL BAR
+     ========================================= */
+  .skill-bar-track {
+    @apply h-2 rounded-full overflow-hidden;
+    background: var(--gray-elegant);
+  }
+  .skill-bar-fill {
+    @apply h-full rounded-full;
+    background: linear-gradient(90deg, #ff1e1e, #ff6b6b);
+    box-shadow: 0 0 8px rgba(255, 30, 30, 0.4);
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* =========================================
+     ANIMATED DIVIDER
+     ========================================= */
+  .divider-red {
+    @apply w-full h-px;
+    background: linear-gradient(90deg, transparent, rgba(255,30,30,0.3), rgba(255,30,30,0.6), rgba(255,30,30,0.3), transparent);
+  }
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.7s ease-out forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(255,30,30,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,30,30,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+/* =========================================
+   REACT HOT TOAST CUSTOMIZATION
+   ========================================= */
+.toast-custom {
+  background: #181818 !important;
+  color: #f5f5f5 !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 10px !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* =========================================
+   LOADER OVERLAY
+   ========================================= */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--black-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* =========================================
+   SMOOTH SCROLL ACTIVE NAV
+   ========================================= */
+.nav-link {
+  position: relative;
+  transition: color var(--transition-fast);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red-main);
+  border-radius: 1px;
+  transition: width var(--transition-normal);
+  box-shadow: 0 0 6px rgba(255, 30, 30, 0.5);
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link:hover,
+.nav-link.active { color: var(--red-main); }
