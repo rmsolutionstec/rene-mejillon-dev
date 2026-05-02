@@ -102,18 +102,18 @@ export const projects = [
     category:    'Web App',
     status:      'Completado',
     featured:    true,
-    tech:        ['Laravel', 'React', 'MySQL', 'Tailwind CSS', 'Stripe', 'AWS S3'],
+    tech:        ['Laravel', 'React', 'MySQL', 'Tailwind CSS', 'Stripe'],
     links: {
       live:   'https://academialuzalmundo.com',
       github: null,
     },
     achievements: [
-      '500+ estudiantes activos',
+      '80+ estudiantes activos',
       'Sistema de pagos integrado',
       'Certificados PDF automáticos',
       'Panel admin completo',
     ],
-    year: 2024,
+    year: 2025,
   },
   {
     id:          2,
@@ -124,9 +124,9 @@ export const projects = [
     category:    'Web App',
     status:      'Completado',
     featured:    true,
-    tech:        ['Laravel', 'Vue.js', 'MySQL', 'WebRTC', 'Bootstrap', 'Chart.js'],
+    tech:        ['Laravel', 'MySQL', 'WebRTC', 'Bootstrap', 'Chart.js'],
     links: {
-      live:   'https://clinicadelalma.org',
+      live:   'https://fundacionclinicadelalma.org',
       github: null,
     },
     achievements: [
@@ -135,7 +135,7 @@ export const projects = [
       'Historial médico digital',
       'Reportes estadísticos',
     ],
-    year: 2023,
+    year: 2025,
   },
   {
     id:          3,
@@ -157,7 +157,7 @@ export const projects = [
       'Analytics avanzado',
       'Panel admin moderno',
     ],
-    year: 2025,
+    year: 2026,
   },
 ]
 
