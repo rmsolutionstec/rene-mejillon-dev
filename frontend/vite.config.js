@@ -23,11 +23,13 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          animations: ['framer-motion'],
-          icons: ['react-icons'],
-          charts: ['recharts'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
+            return 'vendor'
+          }
+          if (id.includes('node_modules/framer-motion')) return 'animations'
+          if (id.includes('node_modules/react-icons'))   return 'icons'
+          if (id.includes('node_modules/recharts'))      return 'charts'
         },
       },
     },
