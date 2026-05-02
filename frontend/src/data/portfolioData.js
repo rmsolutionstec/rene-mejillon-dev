@@ -18,9 +18,9 @@ sistemas de gestión clínica. Mi enfoque combina código limpio, arquitectura
 escalable y diseño centrado en el usuario para crear productos digitales que
 generan valor real.`,
   location:   'Ecuador',
-  email:      'rene@renemejillon.dev',
-  phone:      '+593 99 000 0000',
-  website:    'https://renemejillon.dev',
+  email:      'rm.solutions.tec@gmail.com',
+  phone:      '+593 981817493',
+  website:    'https://rene-mejillon-dev.vercel.app/',
   cvUrl:      '/cv/rene-mejillon-cv.pdf',
   available:  true,
   yearsExp:   5,
@@ -33,7 +33,7 @@ export const socialLinks = [
   { name: 'GitHub',   url: 'https://github.com/renemejillon',   icon: 'FaGithub'   },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/renemejillon', icon: 'FaLinkedin' },
   { name: 'Twitter',  url: 'https://twitter.com/renemejillon',  icon: 'FaTwitter'  },
-  { name: 'WhatsApp', url: 'https://wa.me/593990000000',        icon: 'FaWhatsapp' },
+  { name: 'WhatsApp', url: 'https://wa.me/593981817493',        icon: 'FaWhatsapp' },
 ]
 
 /* ============================================================

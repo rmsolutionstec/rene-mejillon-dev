@@ -12,7 +12,7 @@ import { publicApi } from '../../services/api'
 
 const CONTACT_INFO = [
   { Icon: FaEnvelope,      label: 'Email',    value: personalInfo.email,  href: `mailto:${personalInfo.email}` },
-  { Icon: FaWhatsapp,      label: 'WhatsApp', value: personalInfo.phone,  href: 'https://wa.me/593990000000'   },
+  { Icon: FaWhatsapp,      label: 'WhatsApp', value: personalInfo.phone,  href: 'https://wa.me/593981817493'   },
   { Icon: FaMapMarkerAlt,  label: 'Ubicación',value: personalInfo.location, href: null                         },
 ]
 
