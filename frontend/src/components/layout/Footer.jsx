@@ -16,7 +16,7 @@ const NAV_LINKS = [
 ]
 
 const SOCIAL = [
-  { href: 'https://github.com/renemejillon',      Icon: FaGithub,   label: 'GitHub'   },
+  { href: 'https://github.com/rmsolutionstec',      Icon: FaGithub,   label: 'GitHub'   },
   { href: 'https://linkedin.com/in/renemejillon', Icon: FaLinkedin, label: 'LinkedIn' },
   { href: 'https://wa.me/593990000000',           Icon: FaWhatsapp, label: 'WhatsApp' },
 ]
