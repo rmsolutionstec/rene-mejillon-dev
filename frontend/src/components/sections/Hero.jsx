@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import CountUpLib from 'react-countup'
@@ -11,17 +11,30 @@ import {
 import { personalInfo } from '../../data/portfolioData'
 
 const STATS = [
-  { value: 5,   suffix: '+', label: 'Años de exp.' },
-  { value: 30,  suffix: '+', label: 'Proyectos'    },
-  { value: 25,  suffix: '+', label: 'Clientes'     },
+  { value: 5, suffix: '+', label: 'Años de exp.' },
+  { value: 4, suffix: '+', label: 'Proyectos' },
+  { value: 25, suffix: '+', label: 'Clientes' },
   { value: 100, suffix: '%', label: 'Satisfacción' },
 ]
 
 const SOCIALS = [
-  { Icon: FaGithub,   href: 'https://github.com/renemejillon',      label: 'GitHub'   },
+  { Icon: FaGithub, href: 'https://github.com/rmsolutionstec', label: 'GitHub' },
   { Icon: FaLinkedin, href: 'https://linkedin.com/in/renemejillon', label: 'LinkedIn' },
-  { Icon: FaWhatsapp, href: 'https://wa.me/593990000000',           label: 'WhatsApp' },
+  { Icon: FaWhatsapp, href: 'https://wa.me/593981817493', label: 'WhatsApp' },
 ]
+
+/* ─── Terminal code typing variants ─── */
+const codeContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.18, delayChildren: 0.6 },
+  },
+}
+
+const codeLineVariants = {
+  hidden: { opacity: 0, x: -8 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.25, ease: 'easeOut' } },
+}
 
 /* Floating geometric decorations */
 function FloatingShape({ style, delay = 0 }) {
@@ -114,7 +127,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
 
           {/* LEFT — Text Content */}
-          <div className="space-y-7 order-2 lg:order-1">
+          <div className="space-y-7 order-1 lg:order-1">
 
             {/* Available badge */}
             <motion.div
@@ -170,10 +183,10 @@ export default function Hero() {
             >
               <TypeAnimation
                 sequence={[
-                  'Full Stack Developer',   2000,
-                  'Laravel Expert',         2000,
-                  'React Specialist',       2000,
-                  'API Architect',          2000,
+                  'Full Stack Developer', 2000,
+                  'Laravel Expert', 2000,
+                  'React Specialist', 2000,
+                  'API Architect', 2000,
                   'Tech Solutions Builder', 2000,
                 ]}
                 wrapper="span"
@@ -194,7 +207,8 @@ export default function Hero() {
               Especialista en{' '}
               <span className="text-white-text font-medium">Laravel</span>,{' '}
               <span className="text-white-text font-medium">React</span> y{' '}
-              <span className="text-white-text font-medium">MySQL</span> —
+              <span className="text-white-text font-medium">MySQL</span> o{' '}
+              <span className="text-white-text font-medium">PostgreSQL</span> —
               enfocado en rendimiento, seguridad y experiencias de usuario
               excepcionales.
             </motion.p>
@@ -276,7 +290,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.85, x: 40 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="relative order-2 lg:order-2 flex justify-center lg:justify-end"
           >
             {/* Main card */}
             <div
@@ -303,25 +317,30 @@ export default function Hero() {
                 </div>
 
                 {/* Code snippet */}
-                <div className="font-mono text-sm space-y-1.5">
-                  <div>
+                <motion.div
+                  className="font-mono text-sm space-y-1.5"
+                  variants={codeContainerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <motion.div variants={codeLineVariants}>
                     <span className="text-purple-400">const </span>
                     <span className="text-blue-400">developer</span>
                     <span className="text-white-text"> = {'{'}</span>
-                  </div>
-                  <div className="pl-5">
+                  </motion.div>
+                  <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">name</span>
                     <span className="text-white-text">: </span>
                     <span className="text-yellow-400">'René Mejillón'</span>
                     <span className="text-white-text">,</span>
-                  </div>
-                  <div className="pl-5">
+                  </motion.div>
+                  <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">role</span>
                     <span className="text-white-text">: </span>
                     <span className="text-yellow-400">'Full Stack Dev'</span>
                     <span className="text-white-text">,</span>
-                  </div>
-                  <div className="pl-5">
+                  </motion.div>
+                  <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">stack</span>
                     <span className="text-white-text">: [</span>
                     <span className="text-red-light">'Laravel'</span>
@@ -329,29 +348,33 @@ export default function Hero() {
                     <span className="text-red-light">'React'</span>
                     <span className="text-white-text">, </span>
                     <span className="text-red-light">'MySQL'</span>
+                    <span className="text-white-text">, </span>
+                    <span className="text-red-light">'PostgreSQL'</span>
                     <span className="text-white-text">],</span>
-                  </div>
-                  <div className="pl-5">
+                  </motion.div>
+                  <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">available</span>
                     <span className="text-white-text">: </span>
                     <span className="text-orange-400">true</span>
                     <span className="text-white-text">,</span>
-                  </div>
-                  <div className="pl-5">
+                  </motion.div>
+                  <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">passion</span>
                     <span className="text-white-text">: </span>
                     <span className="text-yellow-400">'Building solutions'</span>
-                  </div>
-                  <div><span className="text-white-text">{'}'}</span></div>
-                  <div className="pt-2 flex items-center gap-1">
+                  </motion.div>
+                  <motion.div variants={codeLineVariants}>
+                    <span className="text-white-text">{'}'}</span>
+                  </motion.div>
+                  <motion.div variants={codeLineVariants} className="pt-2 flex items-center gap-1">
                     <span className="text-gray-dim">$</span>
                     <motion.span
                       animate={{ opacity: [1, 0, 1] }}
                       transition={{ duration: 1, repeat: Infinity }}
                       className="inline-block w-2 h-4 bg-red-main rounded-sm ml-1"
                     />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Stats mini grid */}
                 <div className="grid grid-cols-2 gap-3 mt-8">

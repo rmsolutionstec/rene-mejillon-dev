@@ -12,7 +12,7 @@ API REST desarrollada con **Laravel 10** y **MySQL**. Autenticación con Laravel
 
 ```bash
 # 1. Instalar Laravel en la carpeta backend (si aún no existe)
-composer create-project laravel/laravel . "^10"
+composer create-project laravel/backend
 
 # 2. Copiar y configurar el entorno
 cp .env.example .env

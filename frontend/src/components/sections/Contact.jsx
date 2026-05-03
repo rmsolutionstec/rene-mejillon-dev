@@ -25,7 +25,6 @@ const SOCIALS = [
 const SERVICES_OPTIONS = [
   'Desarrollo Web Full Stack',
   'API REST',
-  'Aplicación PWA',
   'Ecommerce',
   'Consultoría técnica',
   'Otro',

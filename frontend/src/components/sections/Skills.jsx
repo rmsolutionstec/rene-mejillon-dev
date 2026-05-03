@@ -28,9 +28,14 @@ function SkillBar({ name, level, delay = 0, inView }) {
   )
 }
 
+// Herramientas y metodologías utilizadas en el proyecto y en el flujo de trabajo
 const EXTRA_TOOLS = [
-  'Figma', 'Postman', 'VS Code', 'Jira', 'Trello', 'Notion',
-  'Composer', 'npm', 'Vite', 'Webpack', 'ESLint', 'Prettier',
+  // Herramientas
+  'React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'ESLint', 'Prettier',
+  'VS Code', 'npm', 'Git', 'Notion', 'Postman', 'Yarn', 'Jest', 'React Testing Library', 'Chrome DevTools', 'Netlify', 'Vercel', 'GitHub', 'GitHub Actions',
+  // Metodologías
+  'Mobile First', 'Atomic Design', 'BEM', 'Component Driven Development',
+  'Scrum', 'Kanban', 'Code Review', 'CI/CD', 'Documentación Técnica',
 ]
 
 export default function Skills() {
@@ -75,21 +80,20 @@ export default function Skills() {
               <button
                 key={id}
                 onClick={() => setActiveTab(id)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  activeTab === id
+                className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${activeTab === id
                     ? 'text-white'
                     : 'text-gray-text hover:text-white-text'
-                }`}
+                  }`}
                 style={
                   activeTab === id
                     ? {
-                        background: 'linear-gradient(135deg, #ff1e1e, #cc0000)',
-                        boxShadow:  '0 4px 15px rgba(255,30,30,0.35)',
-                      }
+                      background: 'linear-gradient(135deg, #ff1e1e, #cc0000)',
+                      boxShadow: '0 4px 15px rgba(255,30,30,0.35)',
+                    }
                     : {
-                        background: 'rgba(31,31,31,0.7)',
-                        border:     '1px solid rgba(42,42,42,0.8)',
-                      }
+                      background: 'rgba(31,31,31,0.7)',
+                      border: '1px solid rgba(42,42,42,0.8)',
+                    }
                 }
               >
                 {label}
@@ -168,10 +172,10 @@ export default function Skills() {
             className="flex justify-center flex-wrap gap-6 text-xs text-gray-dim"
           >
             {[
-              { range: '90-100%', label: 'Experto'      },
-              { range: '75-89%',  label: 'Avanzado'     },
-              { range: '60-74%',  label: 'Intermedio'   },
-              { range: '<60%',    label: 'En aprendizaje'},
+              { range: '90-100%', label: 'Experto' },
+              { range: '75-89%', label: 'Avanzado' },
+              { range: '60-74%', label: 'Intermedio' },
+              { range: '<60%', label: 'En aprendizaje' },
             ].map(({ range, label }) => (
               <div key={label} className="flex items-center gap-2">
                 <div

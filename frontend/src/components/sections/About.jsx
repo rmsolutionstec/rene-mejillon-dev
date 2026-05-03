@@ -16,11 +16,11 @@ const HIGHLIGHTS = [
   { Icon: FaAward,  label: 'Calidad garantizada',desc: '100% satisfacción cliente'  },
 ]
 
-const VALUES = ['Clean Code', 'SOLID Principles', 'TDD', 'Agile/Scrum', 'Clean Architecture', 'DRY & KISS']
+const VALUES = ['Clean Code', 'SOLID Principles', 'TDD', 'Agile/Scrum', 'Clean Architecture', 'REST API Design', 'Security First', 'Performance Optimization', 'Testing Coverage', 'Documentation', 'Version Control', 'Code Review', 'DevOps Practices', 'Scalability', 'User Experience', 'Problem Solving', 'Continuous Learning', 'Team Collaboration']
 
 const STATS = [
   { value: 5,   suffix: '+', label: 'Años de experiencia'   },
-  { value: 30,  suffix: '+', label: 'Proyectos completados' },
+  { value: 4,  suffix: '+', label: 'Proyectos completados' },
   { value: 25,  suffix: '+', label: 'Clientes satisfechos'  },
   { value: 100, suffix: '%', label: 'Tasa de éxito'         },
 ]
@@ -118,7 +118,7 @@ export default function About() {
                 Descargar CV
               </motion.a>
               <motion.a
-                href="https://github.com/renemejillon"
+                href="https://github.com/rmsolutionstec"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -2 }}

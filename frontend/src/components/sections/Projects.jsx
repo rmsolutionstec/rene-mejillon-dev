@@ -59,14 +59,22 @@ function ProjectModal({ project, onClose }) {
             <FaTimes size={14} />
           </button>
 
-          {/* Image placeholder */}
+          {/* Imagen del proyecto o placeholder */}
           <div
-            className="w-full h-48 flex items-center justify-center"
-            style={{
-              background: 'linear-gradient(135deg, rgba(255,30,30,0.15), rgba(18,18,18,0.9))',
-            }}
+            className="w-full h-48 flex items-center justify-center bg-black/60 relative"
+            style={{ background: 'linear-gradient(135deg, rgba(255,30,30,0.15), rgba(18,18,18,0.9))' }}
           >
-            <FaCode size={48} className="text-red-main opacity-40" />
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={`Imagen de ${project.title}`}
+                className="object-cover w-full h-full"
+                style={{ maxHeight: '192px' }}
+                loading="lazy"
+              />
+            ) : (
+              <FaCode size={48} className="text-red-main opacity-40" />
+            )}
           </div>
 
           <div className="p-8 space-y-5">
@@ -188,14 +196,23 @@ export default function Projects() {
                 style={{ background: 'linear-gradient(90deg, transparent, #ff1e1e, transparent)' }}
               />
 
-              {/* Image placeholder */}
+
+              {/* Imagen del proyecto o placeholder */}
               <div
-                className="h-44 flex items-center justify-center relative overflow-hidden"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,30,30,0.1) 0%, rgba(18,18,18,0.9) 100%)',
-                }}
+                className="h-44 flex items-center justify-center relative overflow-hidden bg-black/60"
+                style={{ background: 'linear-gradient(135deg, rgba(255,30,30,0.1) 0%, rgba(18,18,18,0.9) 100%)' }}
               >
-                <FaCode size={40} className="text-red-main opacity-30 group-hover:opacity-60 transition-opacity" />
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`Imagen de ${project.title}`}
+                    className="object-cover w-full h-full"
+                    style={{ maxHeight: '176px' }}
+                    loading="lazy"
+                  />
+                ) : (
+                  <FaCode size={40} className="text-red-main opacity-30 group-hover:opacity-60 transition-opacity" />
+                )}
                 {project.status === 'En desarrollo' && (
                   <div className="absolute top-3 right-3">
                     <span className="flex items-center gap-1.5 text-xs text-yellow-400 bg-yellow-400/10 border border-yellow-400/30 px-2.5 py-1 rounded-full">
@@ -274,7 +291,7 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <motion.a
-            href="https://github.com/renemejillon"
+            href="https://github.com/rmsolutionstec"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}

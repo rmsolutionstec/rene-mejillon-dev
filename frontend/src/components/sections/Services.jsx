@@ -155,7 +155,7 @@ export default function Services() {
           </h3>
           <p className="text-gray-text text-sm mb-6 max-w-md mx-auto">
             Cuéntame tu idea y trabajamos juntos para hacerla realidad.
-            Ofrezco consultoría gratuita de 30 minutos.
+            Ofrezco consultoría gratuita de 15 minutos.
           </p>
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
