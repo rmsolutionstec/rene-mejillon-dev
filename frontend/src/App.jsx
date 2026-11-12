@@ -14,6 +14,9 @@ import Loader from './components/layout/Loader'
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('admin_token')
   if (!token) return <Navigate to="/admin/login" replace />
+  // Token existe: renderizar la ruta protegida.
+  // La validación real del token ocurre via el interceptor 401 en api.js
+  // que redirige al login si el backend rechaza el token.
   return children
 }
 
@@ -21,7 +24,7 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2200)
+    const timer = setTimeout(() => setLoading(false), 800)
     return () => clearTimeout(timer)
   }, [])
 

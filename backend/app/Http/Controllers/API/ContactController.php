@@ -27,6 +27,13 @@ class ContactController extends Controller
             'message' => 'required|string|max:3000',
         ]);
 
+        // Sanitizar campos de texto para prevenir almacenamiento de HTML/scripts
+        $validated['name']    = strip_tags($validated['name']);
+        $validated['message'] = strip_tags($validated['message']);
+        if (isset($validated['subject'])) {
+            $validated['subject'] = strip_tags($validated['subject']);
+        }
+
         $contact = Contact::create($validated);
 
         return response()->json([

@@ -1,0 +1,8 @@
+# Reglas de Proyecto: Portfolio René Mejillón (Cursor & Codex)
+# Leer PROJECT.md y .agents/rules/security-and-dev.md para el detalle completo.
+
+- Monorepo: Frontend en `frontend/` (React + Vite), Backend en `backend/` (Laravel 12 API).
+- Ciberseguridad: NUNCA commitear archivos .env reales. Mantener throttle en endpoints POST, CSP en vercel.json y sanitización en controladores.
+- Tokens: Expiración obligatoria en Sanctum. Manejo seguro de tokens en frontend.
+- Fallback: Si la API de Laravel no responde, la UI usa datos estáticos de `frontend/src/data/portfolioData.js`.
+- Commits: Conventional Commits obligatorio (`feat:`, `fix:`, `docs:`, `refactor:`).
