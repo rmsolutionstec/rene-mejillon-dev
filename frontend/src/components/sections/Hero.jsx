@@ -217,7 +217,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap items-center gap-3"
             >
               <motion.button
                 whileHover={{ scale: 1.04, y: -2 }}
@@ -229,16 +229,6 @@ export default function Hero() {
                 Ver Proyectos
               </motion.button>
 
-              <motion.button
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={scrollToContact}
-                className="btn-secondary gap-2"
-              >
-                <FaPaperPlane size={14} />
-                Contactarme
-              </motion.button>
-
               <motion.a
                 href={personalInfo.cvUrl}
                 download="Rene_Mejillon_CV_2026.pdf"
@@ -247,16 +237,21 @@ export default function Hero() {
                 aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm tracking-wide text-white transition-all duration-300"
-                style={{
-                  background: 'rgba(255, 30, 30, 0.12)',
-                  border: '1px solid rgba(255, 30, 30, 0.5)',
-                  boxShadow: '0 4px 18px rgba(255, 30, 30, 0.22)',
-                }}
+                className="btn-secondary gap-2"
               >
-                <FaDownload size={13} className="text-red-main" />
+                <FaDownload size={13} />
                 <span>Descargar CV</span>
               </motion.a>
+
+              <motion.button
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={scrollToContact}
+                className="btn-ghost gap-2"
+              >
+                <FaPaperPlane size={14} />
+                Contactarme
+              </motion.button>
             </motion.div>
 
             {/* Social links */}
@@ -343,7 +338,13 @@ export default function Hero() {
                   <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">role</span>
                     <span className="text-white-text">: </span>
-                    <span className="text-yellow-400">'Full Stack Dev'</span>
+                    <span className="text-yellow-400">'Full Stack & TI'</span>
+                    <span className="text-white-text">,</span>
+                  </motion.div>
+                  <motion.div variants={codeLineVariants} className="pl-5">
+                    <span className="text-green-400">degree</span>
+                    <span className="text-white-text">: </span>
+                    <span className="text-yellow-400">'Tecnólogo en Software (TIC)'</span>
                     <span className="text-white-text">,</span>
                   </motion.div>
                   <motion.div variants={codeLineVariants} className="pl-5">
@@ -353,9 +354,11 @@ export default function Hero() {
                     <span className="text-white-text">, </span>
                     <span className="text-red-light">'React'</span>
                     <span className="text-white-text">, </span>
-                    <span className="text-red-light">'MySQL'</span>
+                    <span className="text-red-light">'Python'</span>
                     <span className="text-white-text">, </span>
-                    <span className="text-red-light">'PostgreSQL'</span>
+                    <span className="text-red-light">'Docker'</span>
+                    <span className="text-white-text">, </span>
+                    <span className="text-red-light">'IA Local'</span>
                     <span className="text-white-text">],</span>
                   </motion.div>
                   <motion.div variants={codeLineVariants} className="pl-5">
