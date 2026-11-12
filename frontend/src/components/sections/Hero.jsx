@@ -247,10 +247,15 @@ export default function Hero() {
                 aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="btn-ghost gap-2"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm tracking-wide text-white transition-all duration-300"
+                style={{
+                  background: 'rgba(255, 30, 30, 0.12)',
+                  border: '1px solid rgba(255, 30, 30, 0.5)',
+                  boxShadow: '0 4px 18px rgba(255, 30, 30, 0.22)',
+                }}
               >
-                <FaDownload size={13} />
-                Descargar CV
+                <FaDownload size={13} className="text-red-main" />
+                <span>Descargar CV</span>
               </motion.a>
             </motion.div>
 

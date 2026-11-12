@@ -8,10 +8,10 @@ Este documento registra el estado de verificación, fuente de evidencia y nivel 
 
 | Elemento | Declaración Verificada | Fuente de Evidencia | Estado |
 |---|---|---|---|
-| **Nombre profesional** | René Mejillón | Documentos y perfiles oficiales | `CONFIRMADO` |
+| **Nombre profesional** | René David Mejillón Torres (René Mejillón) | Documentos y certificado oficial MINEDEC | `CONFIRMADO` |
 | **Título principal** | Desarrollador Full Stack \| Automatización e Infraestructura TI | Formación y proyectos de código | `CONFIRMADO` |
 | **Especialización** | Integración de Inteligencia Artificial y Soluciones Tecnológicas | Repositorio `alpha-ecuador-tts`, scripts de automatización | `CONFIRMADO` |
-| **Formación Académica** | Tecnólogo Superior en Desarrollo de Software (Graduación: 2025) | Declarado por el propietario / Título registrado | `CONFIRMADO` |
+| **Formación Académica** | Tecnólogo Superior en Desarrollo de Software (Registro Oficial SNIESE: 2116-2026-3398511 del 17/06/2026, Instituto Superior Tecnológico Guayaquil) | Certificado Oficial de Registro de Título MINEDEC Ecuador | `CONFIRMADO OFICIALMENTE` |
 | **Trayectoria Integral** | Soporte técnico, infraestructura y soluciones tecnológicas desde 2015; desarrollo práctico de software posterior | Registro laboral (REMETECS / Alpha Publicidad y Soporte) | `CONFIRMADO` |
 | **Años de Programación** | Trayectoria TI desde 2015; experiencia en desarrollo full stack comprobada en proyectos | Código fuente y repositorios | `CONFIRMADO (Sin sobreventa)` |
 

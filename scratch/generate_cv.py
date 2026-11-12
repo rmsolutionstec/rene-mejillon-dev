@@ -104,9 +104,9 @@ def create_pdf(filename):
     draw_rect(p1, 0, 770, 595, 72, 0.06, 0.06, 0.06) # Dark background
     draw_rect(p1, 0, 767, 595, 3, 0.9, 0.12, 0.12)  # Red accent line
 
-    draw_text(p1, "F2", 22, 40, 805, 1, 1, 1, "RENÉ MEJILLÓN")
-    draw_text(p1, "F2", 11, 40, 788, 0.9, 0.2, 0.2, "DESARROLLADOR FULL STACK | AUTOMATIZACIÓN E INFRAESTRUCTURA TI")
-    draw_text(p1, "F1", 8.5, 40, 774, 0.8, 0.8, 0.8, "Ecuador | Email: rm.solutions.tec@gmail.com | Tel/WhatsApp: +593 981817493")
+    draw_text(p1, "F2", 22, 40, 805, 1, 1, 1, "RENÉ DAVID MEJILLÓN TORRES")
+    draw_text(p1, "F2", 11, 40, 788, 0.9, 0.2, 0.2, "TECNÓLOGO EN DESARROLLO DE SOFTWARE | FULL STACK & TI")
+    draw_text(p1, "F1", 8.5, 40, 774, 0.8, 0.8, 0.8, "Guayaquil, Ecuador | Email: rm.solutions.tec@gmail.com | Tel/WhatsApp: +593 981817493")
     draw_text(p1, "F1", 8.5, 360, 774, 0.8, 0.8, 0.8, "GitHub: rmsolutionstec | Web: rene-mejillon-dev.vercel.app")
 
     # SECTION 1: PERFIL PROFESIONAL
@@ -283,9 +283,12 @@ def create_pdf(filename):
 
     y -= 18
     draw_text(p2, "F2", 10, 40, y, 0.1, 0.1, 0.1, "Tecnólogo Superior en Desarrollo de Software")
-    draw_text(p2, "F1", 9, 440, y, 0.5, 0.5, 0.5, "Graduado en 2025 | Ecuador")
+    draw_text(p2, "F1", 9, 415, y, 0.5, 0.5, 0.5, "Reg. Oficial: 2026 | Ecuador")
     y -= 13
-    draw_text(p2, "F1", 8.5, 40, y, 0.3, 0.3, 0.3, "Formación técnica superior en análisis, diseño, programación orientada a objetos, bases de datos y arquitecturas web.")
+    draw_text(p2, "F2", 8.5, 40, y, 0.85, 0.1, 0.1, "Instituto Superior Tecnológico Guayaquil")
+    draw_text(p2, "F1", 8.5, 260, y, 0.35, 0.35, 0.35, "| Registro SNIESE / MINEDEC: 2116-2026-3398511 (17/06/2026)")
+    y -= 13
+    draw_text(p2, "F1", 8.5, 40, y, 0.3, 0.3, 0.3, "Título oficial de tercer nivel técnico-tecnológico superior en el área de Tecnologías de la Información y Comunicación (TIC).")
 
     y -= 16
     draw_text(p2, "F2", 10, 40, y, 0.1, 0.1, 0.1, "Aprendizaje Continuo y Especialización Práctica")

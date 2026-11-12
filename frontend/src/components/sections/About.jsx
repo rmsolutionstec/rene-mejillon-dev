@@ -4,7 +4,7 @@ import CountUpLib from 'react-countup'
 const CountUp = CountUpLib?.default ?? CountUpLib
 import {
   FaCode, FaRocket, FaHeart, FaAward,
-  FaGithub, FaLinkedin,
+  FaGithub, FaLinkedin, FaDownload,
 } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
 import { personalInfo } from '../../data/portfolioData'
@@ -19,10 +19,10 @@ const HIGHLIGHTS = [
 const VALUES = ['Clean Code', 'SOLID Principles', 'TDD', 'Agile/Scrum', 'Clean Architecture', 'REST API Design', 'Security First', 'Performance Optimization', 'Testing Coverage', 'Documentation', 'Version Control', 'Code Review', 'DevOps Practices', 'Scalability', 'User Experience', 'Problem Solving', 'Continuous Learning', 'Team Collaboration']
 
 const STATS = [
-  { value: 5,   suffix: '+', label: 'Años de experiencia'   },
-  { value: 4,  suffix: '+', label: 'Proyectos completados' },
-  { value: 25,  suffix: '+', label: 'Clientes satisfechos'  },
-  { value: 100, suffix: '%', label: 'Tasa de éxito'         },
+  { value: 10,  suffix: '+', label: 'Años en soporte e infraestructura TI' },
+  { value: 8,   suffix: '',  label: 'Proyectos técnicos desarrollados'     },
+  { value: 1,   suffix: '',  label: 'Título de 3er nivel en Software (TIC)'},
+  { value: 100, suffix: '%', label: 'Compromiso y código limpio'           },
 ]
 
 export default function About() {
@@ -115,9 +115,10 @@ export default function About() {
                 aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="btn-primary"
+                className="btn-primary gap-2"
               >
-                Descargar CV
+                <FaDownload size={13} />
+                <span>Descargar CV</span>
               </motion.a>
               <motion.a
                 href="https://github.com/rmsolutionstec"
