@@ -143,8 +143,10 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <motion.a
                 href={personalInfo.cvUrl}
+                download="Rene_Mejillon_CV_2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 className="hidden md:inline-flex btn-primary text-xs px-5 py-2.5"
@@ -228,8 +230,10 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 href={personalInfo.cvUrl}
+                download="Rene_Mejillon_CV_2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
                 className="btn-primary w-full justify-center"
                 onClick={() => setMenuOpen(false)}
               >

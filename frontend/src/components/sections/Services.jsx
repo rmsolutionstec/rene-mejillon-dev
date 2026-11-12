@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import {
   FaCode, FaRocket, FaMobileAlt, FaShoppingCart,
   FaDatabase, FaCloud, FaCheckCircle, FaStar,
+  FaDesktop, FaCogs, FaServer,
 } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
 import { services } from '../../data/portfolioData'
@@ -10,6 +11,7 @@ import { services } from '../../data/portfolioData'
 const ICON_MAP = {
   FaCode: FaCode, FaRocket: FaRocket, FaMobile: FaMobileAlt,
   FaShoppingCart: FaShoppingCart, FaDatabase: FaDatabase, FaCloud: FaCloud,
+  FaDesktop: FaDesktop, FaCogs: FaCogs, FaServer: FaServer,
 }
 
 export default function Services() {
@@ -121,17 +123,19 @@ export default function Services() {
                   ))}
                 </ul>
 
-                {/* Price */}
+                {/* Price / CTA */}
                 <div
                   className="flex items-center justify-between pt-4 border-t"
                   style={{ borderColor: 'rgba(42,42,42,0.8)' }}
                 >
-                  <span className="text-white-text font-bold text-lg">{service.price}</span>
+                  <span className="text-white-text font-semibold text-sm">
+                    {service.price || 'Cotización a medida'}
+                  </span>
                   <button
                     onClick={() => document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-red-main text-sm font-medium hover:text-red-hover transition-colors"
                   >
-                    Solicitar →
+                    Consultar →
                   </button>
                 </div>
               </motion.div>

@@ -11,10 +11,9 @@ import {
 import { personalInfo } from '../../data/portfolioData'
 
 const STATS = [
-  { value: 5, suffix: '+', label: 'Años de exp.' },
-  { value: 4, suffix: '+', label: 'Proyectos' },
-  { value: 25, suffix: '+', label: 'Clientes' },
-  { value: 100, suffix: '%', label: 'Satisfacción' },
+  { value: 10, suffix: '+', label: 'Años en TI' },
+  { value: 8, suffix: '', label: 'Proyectos Reales' },
+  { value: 100, suffix: '%', label: 'Enfoque Pragmático' },
 ]
 
 const SOCIALS = [
@@ -183,11 +182,11 @@ export default function Hero() {
             >
               <TypeAnimation
                 sequence={[
-                  'Full Stack Developer', 2000,
-                  'Laravel Expert', 2000,
-                  'React Specialist', 2000,
-                  'API Architect', 2000,
-                  'Tech Solutions Builder', 2000,
+                  'Desarrollador Full Stack', 2000,
+                  'Laravel & React Specialist', 2000,
+                  'Automatización con Python & IA', 2000,
+                  'Infraestructura TI & Servidores', 2000,
+                  'Soluciones Tecnológicas Reales', 2000,
                 ]}
                 wrapper="span"
                 speed={50}
@@ -242,8 +241,10 @@ export default function Hero() {
 
               <motion.a
                 href={personalInfo.cvUrl}
+                download="Rene_Mejillon_CV_2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="btn-ghost gap-2"

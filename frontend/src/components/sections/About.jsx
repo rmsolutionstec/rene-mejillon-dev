@@ -109,8 +109,10 @@ export default function About() {
             <div className="flex flex-wrap gap-3 pt-2">
               <motion.a
                 href={personalInfo.cvUrl}
+                download="Rene_Mejillon_CV_2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="btn-primary"

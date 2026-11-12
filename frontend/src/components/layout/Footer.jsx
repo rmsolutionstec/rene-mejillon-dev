@@ -186,8 +186,10 @@ export default function Footer() {
 
             <motion.a
               href={personalInfo.cvUrl}
+              download="Rene_Mejillon_CV_2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Descargar Currículum Vitae de René Mejillón en formato PDF"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="btn-primary text-xs px-5 py-2.5 w-full justify-center"
