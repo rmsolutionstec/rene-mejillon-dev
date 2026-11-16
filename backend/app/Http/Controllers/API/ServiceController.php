@@ -3,65 +3,38 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $services = Service::orderByDesc('popular')->orderBy('id')->get();
-
-        return response()->json(['data' => $services]);
+        return response()->json(['data' => Service::when(! $request->is('api/admin/*'), fn ($query) => $query->where('is_published', true))->orderBy('id')->get(), 'meta' => ['catalog_version' => 2]]);
     }
 
     public function show($id)
     {
-        $service = Service::findOrFail($id);
-
-        return response()->json(['data' => $service]);
+        return response()->json(['data' => Service::where('is_published', true)->findOrFail($id)]);
     }
 
-    public function store(Request $request)
+    public function store(ServiceRequest $request)
     {
-        $validated = $request->validate([
-            'title'       => 'required|string|max:150',
-            'description' => 'nullable|string',
-            'icon'        => 'nullable|string|max:50',
-            'price'       => 'nullable|string|max:100',
-            'features'    => 'nullable|array',
-            'features.*'  => 'string|max:200',
-            'popular'     => 'boolean',
-        ]);
-
-        $service = Service::create($validated);
-
-        return response()->json(['data' => $service], 201);
+        return response()->json(['data' => Service::create($request->validated())], 201);
     }
 
-    public function update(Request $request, $id)
+    public function update(ServiceRequest $request, $id)
     {
         $service = Service::findOrFail($id);
-
-        $validated = $request->validate([
-            'title'       => 'sometimes|required|string|max:150',
-            'description' => 'nullable|string',
-            'icon'        => 'nullable|string|max:50',
-            'price'       => 'nullable|string|max:100',
-            'features'    => 'nullable|array',
-            'features.*'  => 'string|max:200',
-            'popular'     => 'boolean',
-        ]);
-
-        $service->update($validated);
+        $service->update($request->validated());
 
         return response()->json(['data' => $service]);
     }
 
     public function destroy($id)
     {
-        $service = Service::findOrFail($id);
-        $service->delete();
+        Service::findOrFail($id)->delete();
 
         return response()->json(['message' => 'Servicio eliminado.']);
     }

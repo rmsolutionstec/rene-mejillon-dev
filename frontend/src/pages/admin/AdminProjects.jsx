@@ -1,63 +1,18 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
-import { FaPlus, FaEdit, FaTrash, FaTimes, FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+import { FaPlus, FaEdit, FaTrash, FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+import Modal from '../../components/ui/Modal'
 import { adminApi } from '../../services/api'
 
-const EMPTY = {
+const EMPTY = { is_published: true,
   title: '', description: '', short_desc: '', category: 'Web App',
   status: 'Completado', tech: '', year: new Date().getFullYear(),
-  live_url: '', github_url: '', featured: false,
+  live_url: '', github_url: '', featured: false, period: '', participation: '', achievements: '', display_order: 100,
 }
 
-const STATUS_OPT = ['Completado', 'En desarrollo', 'Próximamente']
-const CAT_OPT    = ['Web App', 'Ecommerce', 'Landing Page', 'API', 'Mobile', 'Otro']
-
-function Modal({ open, onClose, title, children }) {
-  if (!open) return null
-  return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(6px)' }}
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          className="w-full max-w-2xl rounded-2xl overflow-hidden"
-          style={{
-            background: '#161616',
-            border: '1px solid rgba(255,30,30,0.2)',
-            boxShadow: '0 25px 80px rgba(0,0,0,0.9)',
-            maxHeight: '90vh',
-            overflowY: 'auto',
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div
-            className="flex items-center justify-between p-6 border-b"
-            style={{ borderColor: 'rgba(42,42,42,0.8)' }}
-          >
-            <h2 className="font-display font-bold text-lg text-white-text">{title}</h2>
-            <button
-              onClick={onClose}
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-text hover:text-white-text"
-              style={{ background: 'rgba(31,31,31,0.8)' }}
-            >
-              <FaTimes size={14} />
-            </button>
-          </div>
-          <div className="p-6">{children}</div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  )
-}
+const STATUS_OPT = ['En uso y evolución', 'Publicado', 'En evolución', 'En desarrollo', 'Proyecto personal', 'Uso propio', 'Completado']
+const CAT_OPT    = ['Web App', 'Software Desktop', 'Automatización', 'Infraestructura', 'Frontend', 'Otro']
 
 export default function AdminProjects() {
   const [projects, setProjects] = useState([])
@@ -79,7 +34,7 @@ export default function AdminProjects() {
 
   const openCreate = () => { setForm(EMPTY); setModal('create') }
   const openEdit   = (p) => {
-    setForm({ ...p, tech: Array.isArray(p.tech) ? p.tech.join(', ') : p.tech || '' })
+    setForm({ ...EMPTY, ...p, live_url: p.live_url || '', github_url: p.github_url || '', achievements: (p.achievements || []).join('\n'), tech: Array.isArray(p.tech) ? p.tech.join(', ') : p.tech || '' })
     setModal('edit')
   }
   const closeModal = () => { setModal(null); setForm(EMPTY) }
@@ -94,6 +49,7 @@ export default function AdminProjects() {
     setSaving(true)
     const payload = {
       ...form,
+      achievements: form.achievements.split('\n').map((item) => item.trim()).filter(Boolean),
       tech: typeof form.tech === 'string'
         ? form.tech.split(',').map((t) => t.trim()).filter(Boolean)
         : form.tech,
@@ -233,14 +189,14 @@ export default function AdminProjects() {
                     </td>
                     <td className="px-5 py-4">
                       <div className="flex gap-2">
-                        <button
+                        <button aria-label="Editar proyecto"
                           onClick={() => openEdit(p)}
                           className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-dim hover:text-red-main transition-colors"
                           style={{ background: 'rgba(31,31,31,0.8)' }}
                         >
                           <FaEdit size={13} />
                         </button>
-                        <button
+                        <button aria-label="Eliminar proyecto"
                           onClick={() => handleDelete(p.id)}
                           disabled={deleting === p.id}
                           className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-dim hover:text-red-main transition-colors"
@@ -270,86 +226,86 @@ export default function AdminProjects() {
         <form onSubmit={handleSave} className="space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="sm:col-span-2">
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-title" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Título *
               </label>
-              <input
+              <input id="field-title"
                 type="text" name="title" value={form.title}
                 onChange={handleChange} placeholder="Nombre del proyecto"
                 required className="form-input"
               />
             </div>
             <div>
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-category" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Categoría
               </label>
-              <select name="category" value={form.category} onChange={handleChange} className="form-input">
+              <select id="field-category" name="category" value={form.category} onChange={handleChange} className="form-input">
                 {CAT_OPT.map((o) => <option key={o} value={o} style={{ background: '#181818' }}>{o}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-status" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Estado
               </label>
-              <select name="status" value={form.status} onChange={handleChange} className="form-input">
+              <select id="field-status" name="status" value={form.status} onChange={handleChange} className="form-input">
                 {STATUS_OPT.map((o) => <option key={o} value={o} style={{ background: '#181818' }}>{o}</option>)}
               </select>
             </div>
             <div className="sm:col-span-2">
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-short_desc" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Descripción corta
               </label>
-              <input
+              <input id="field-short_desc"
                 type="text" name="short_desc" value={form.short_desc}
                 onChange={handleChange} placeholder="Descripción breve (para cards)"
                 className="form-input"
               />
             </div>
             <div className="sm:col-span-2">
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-description" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Descripción completa
               </label>
-              <textarea
+              <textarea id="field-description"
                 name="description" value={form.description} onChange={handleChange}
                 rows={3} placeholder="Descripción detallada del proyecto"
                 className="form-input resize-none"
               />
             </div>
             <div className="sm:col-span-2">
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-tech" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Tecnologías (separadas por coma)
               </label>
-              <input
+              <input id="field-tech"
                 type="text" name="tech" value={form.tech}
                 onChange={handleChange} placeholder="Laravel, React, MySQL, ..."
                 className="form-input"
               />
             </div>
             <div>
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-live_url" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 URL en vivo
               </label>
-              <input
+              <input id="field-live_url"
                 type="url" name="live_url" value={form.live_url}
                 onChange={handleChange} placeholder="https://..."
                 className="form-input"
               />
             </div>
             <div>
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-github_url" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 URL GitHub
               </label>
-              <input
+              <input id="field-github_url"
                 type="url" name="github_url" value={form.github_url}
                 onChange={handleChange} placeholder="https://github.com/..."
                 className="form-input"
               />
             </div>
             <div>
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="field-year" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Año
               </label>
-              <input
+              <input id="field-year"
                 type="number" name="year" value={form.year}
                 onChange={handleChange} min="2015" max="2030"
                 className="form-input"
@@ -367,6 +323,15 @@ export default function AdminProjects() {
             </div>
           </div>
 
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[['period', 'Período'], ['participation', 'Mi participación'], ['display_order', 'Orden de presentación']].map(([name, label]) => <div key={name}>
+              <label htmlFor={'project-' + name} className="block text-gray-text mb-2">{label}</label>
+              <input id={'project-' + name} type={name === 'display_order' ? 'number' : 'text'} min={0} name={name} value={form[name] ?? ''} onChange={handleChange} className="form-input" />
+            </div>)}
+          </div>
+          <label htmlFor="project-achievements" className="block text-gray-text">Aportes (uno por línea)</label>
+          <textarea id="project-achievements" name="achievements" value={form.achievements} onChange={handleChange} rows={4} className="form-input" />
+          <label className="flex gap-3 items-center text-gray-text"><input type="checkbox" checked={!!form.is_published} onChange={(event) => setForm((previous) => ({ ...previous, is_published: event.target.checked }))} />Publicar en el portafolio</label>
           <div className="flex gap-3 pt-2">
             <motion.button
               type="submit"

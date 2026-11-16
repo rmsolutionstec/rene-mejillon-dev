@@ -1,8 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { TypeAnimation } from 'react-type-animation'
-import CountUpLib from 'react-countup'
-const CountUp = CountUpLib?.default ?? CountUpLib
+import { motion, useReducedMotion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import {
   FaGithub, FaLinkedin, FaWhatsapp,
@@ -11,9 +7,9 @@ import {
 import { personalInfo } from '../../data/portfolioData'
 
 const STATS = [
-  { value: 10, suffix: '+', label: 'Años en TI' },
-  { value: 8, suffix: '', label: 'Proyectos Reales' },
-  { value: 100, suffix: '%', label: 'Enfoque Pragmático' },
+  { value: 2008, suffix: '', label: 'Inicio de trayectoria TI' },
+  { value: 2023, suffix: '', label: 'Laravel y React desde' },
+  { value: 2025, suffix: '', label: 'Fin de estudios de software' },
 ]
 
 const SOCIALS = [
@@ -37,9 +33,10 @@ const codeLineVariants = {
 
 /* Floating geometric decorations */
 function FloatingShape({ style, delay = 0 }) {
+  const reduced = useReducedMotion()
   return (
     <motion.div
-      animate={{
+      animate={reduced ? {} : {
         y: [0, -20, 0],
         rotate: [0, 5, -5, 0],
         opacity: [0.3, 0.6, 0.3],
@@ -130,7 +127,7 @@ export default function Hero() {
 
             {/* Available badge */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-sm font-medium"
@@ -150,7 +147,7 @@ export default function Hero() {
             {/* Name */}
             <div>
               <motion.h1
-                initial={{ opacity: 0, y: 40 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                 className="font-display font-black leading-none"
@@ -175,46 +172,27 @@ export default function Hero() {
 
             {/* Type animation */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="text-lg sm:text-xl font-medium text-gray-text h-8"
+              className="text-lg sm:text-xl font-medium text-gray-text"
             >
-              <TypeAnimation
-                sequence={[
-                  'Desarrollador Full Stack', 2000,
-                  'Laravel & React Specialist', 2000,
-                  'Automatización con Python & IA', 2000,
-                  'Infraestructura TI & Servidores', 2000,
-                  'Soluciones Tecnológicas Reales', 2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                style={{ color: '#ff1e1e' }}
-              />
+              <span className="text-red-light">{personalInfo.title}</span>
             </motion.div>
 
             {/* Bio */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
               className="text-gray-text text-base leading-relaxed max-w-lg"
             >
-              Construyo soluciones digitales robustas y escalables.
-              Especialista en{' '}
-              <span className="text-white-text font-medium">Laravel</span>,{' '}
-              <span className="text-white-text font-medium">React</span> y{' '}
-              <span className="text-white-text font-medium">MySQL</span> o{' '}
-              <span className="text-white-text font-medium">PostgreSQL</span> —
-              enfocado en rendimiento, seguridad y experiencias de usuario
-              excepcionales.
+              {personalInfo.subtitle}. Desarrollo aplicaciones web y doy mantenimiento a soluciones reales, con experiencia previa en soporte e infraestructura TI.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
               className="flex flex-wrap items-center gap-3"
@@ -256,7 +234,7 @@ export default function Hero() {
 
             {/* Social links */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
               className="flex items-center gap-4 pt-2"
@@ -288,7 +266,7 @@ export default function Hero() {
 
           {/* RIGHT — Visual Card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85, x: 40 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
             className="relative order-2 lg:order-2 flex justify-center lg:justify-end"
@@ -321,7 +299,7 @@ export default function Hero() {
                 <motion.div
                   className="font-mono text-sm space-y-1.5"
                   variants={codeContainerVariants}
-                  initial="hidden"
+                  initial={false}
                   animate="visible"
                 >
                   <motion.div variants={codeLineVariants}>
@@ -332,33 +310,33 @@ export default function Hero() {
                   <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">name</span>
                     <span className="text-white-text">: </span>
-                    <span className="text-yellow-400">'René Mejillón'</span>
+                    <span className="text-yellow-400">&#39;René Mejillón&#39;</span>
                     <span className="text-white-text">,</span>
                   </motion.div>
                   <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">role</span>
                     <span className="text-white-text">: </span>
-                    <span className="text-yellow-400">'Full Stack & TI'</span>
+                    <span className="text-yellow-400">&#39;Full Stack Developer&#39;</span>
                     <span className="text-white-text">,</span>
                   </motion.div>
                   <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">degree</span>
                     <span className="text-white-text">: </span>
-                    <span className="text-yellow-400">'Tecnólogo en Software (TIC)'</span>
+                    <span className="text-yellow-400">&#39;Tecnólogo en Software (TIC)&#39;</span>
                     <span className="text-white-text">,</span>
                   </motion.div>
                   <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">stack</span>
                     <span className="text-white-text">: [</span>
-                    <span className="text-red-light">'Laravel'</span>
+                    <span className="text-red-light">&#39;Laravel&#39;</span>
                     <span className="text-white-text">, </span>
-                    <span className="text-red-light">'React'</span>
+                    <span className="text-red-light">&#39;React&#39;</span>
                     <span className="text-white-text">, </span>
-                    <span className="text-red-light">'Python'</span>
+                    <span className="text-red-light">&#39;JavaScript&#39;</span>
                     <span className="text-white-text">, </span>
-                    <span className="text-red-light">'Docker'</span>
+                    <span className="text-red-light">&#39;MySQL&#39;</span>
                     <span className="text-white-text">, </span>
-                    <span className="text-red-light">'IA Local'</span>
+                    <span className="text-red-light">&#39;Inertia.js&#39;</span>
                     <span className="text-white-text">],</span>
                   </motion.div>
                   <motion.div variants={codeLineVariants} className="pl-5">
@@ -370,7 +348,7 @@ export default function Hero() {
                   <motion.div variants={codeLineVariants} className="pl-5">
                     <span className="text-green-400">passion</span>
                     <span className="text-white-text">: </span>
-                    <span className="text-yellow-400">'Building solutions'</span>
+                    <span className="text-yellow-400">&#39;Building solutions&#39;</span>
                   </motion.div>
                   <motion.div variants={codeLineVariants}>
                     <span className="text-white-text">{'}'}</span>
@@ -390,7 +368,7 @@ export default function Hero() {
                   {STATS.map(({ value, suffix, label }, i) => (
                     <motion.div
                       key={label}
-                      initial={{ opacity: 0, scale: 0.8 }}
+                      initial={false}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.8 + i * 0.1 }}
                       className="text-center p-3 rounded-xl"
@@ -401,7 +379,7 @@ export default function Hero() {
                     >
                       <div className="font-display font-black text-xl text-red-main leading-none">
                         {inView && (
-                          <CountUp end={value} duration={2.5} delay={0.8} suffix={suffix} />
+                          <span>{value}{suffix}</span>
                         )}
                       </div>
                       <div className="text-gray-dim text-[11px] mt-1">{label}</div>
@@ -423,7 +401,7 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"

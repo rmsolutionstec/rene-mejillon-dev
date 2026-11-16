@@ -5,7 +5,7 @@ export default function Loader() {
     <AnimatePresence>
       <motion.div
         className="loader-overlay"
-        initial={{ opacity: 1 }}
+        initial={false}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
@@ -24,7 +24,7 @@ export default function Loader() {
         <div className="relative flex flex-col items-center gap-10">
           {/* Logo monogram */}
           <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
+            initial={false}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'backOut' }}
             className="relative"
@@ -64,7 +64,7 @@ export default function Loader() {
 
           {/* Name */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-center"
@@ -80,7 +80,7 @@ export default function Loader() {
 
           {/* Progress bar */}
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
             className="w-64"
@@ -88,7 +88,7 @@ export default function Loader() {
             <div className="skill-bar-track">
               <motion.div
                 className="skill-bar-fill"
-                initial={{ width: '0%' }}
+                initial={false}
                 animate={{ width: '100%' }}
                 transition={{ duration: 1.6, ease: 'easeInOut', delay: 0.6 }}
               />
@@ -97,7 +97,7 @@ export default function Loader() {
               <span className="text-xs text-gray-dim">Cargando...</span>
               <motion.span
                 className="text-xs text-red-main font-medium"
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.8 }}
               >

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom'
+import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import toast from 'react-hot-toast'
 import {
@@ -23,7 +23,7 @@ export default function AdminLayout() {
   const user = JSON.parse(localStorage.getItem('admin_user') || '{"name":"Admin","email":""}')
 
   const handleLogout = async () => {
-    try { await adminApi.logout() } catch {}
+    try { await adminApi.logout() } catch { /* Clear the local session even if the API is unreachable. */ }
     localStorage.removeItem('admin_token')
     localStorage.removeItem('admin_user')
     toast.success('Sesión cerrada')
@@ -167,7 +167,7 @@ export default function AdminLayout() {
           }}
         >
           <button
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? "Cerrar navegación" : "Abrir navegación"}
             className="md:hidden p-2 rounded-lg text-gray-text hover:text-white-text"
           >
             {open ? <FaTimes size={18} /> : <FaBars size={18} />}

@@ -1,309 +1,66 @@
-# René Mejillón Dev — Portfolio Full Stack
+# René Mejillón — portafolio profesional
 
-Portfolio profesional y CV digital de **René Mejillón**, Full Stack Developer especializado en Laravel, React y MySQL.
+Portafolio de René David Mejillón Torres, desarrollador full stack en Guayaquil, Ecuador. Experiencia práctica con Laravel y React desde 2023; trayectoria TI desde 2008. Datos contrastados con el perfil de LinkedIn y la información aportada por el propietario.
 
-**Stack:** React 19 + Vite · Laravel 12 API REST · MySQL · Tailwind CSS · Framer Motion
+- Web: https://rene-mejillon-dev.vercel.app/
+- LinkedIn: https://www.linkedin.com/in/renemejillon/
+- GitHub: https://github.com/rmsolutionstec
+- Contacto profesional: renemejillon@alphaecuador.com
+- Servicios de Alpha: contacto@alphaecuador.com
 
----
+## Arquitectura
 
-## Estructura del proyecto
+React 18 + Vite 8 + Tailwind CSS y React Router 7 en `frontend/`. Laravel 12 + Sanctum en `backend/`. PostgreSQL previsto en Render; SQLite para pruebas locales. La API se implementa en este repositorio; la configuración y disponibilidad de producción se comprueban antes del despliegue.
 
-```
-rene-mejillon-dev/
-├── frontend/    # React 19 + Vite + Tailwind CSS (deploy → Vercel)
-└── backend/     # Laravel 12 API REST            (deploy → Render)
-```
+El catálogo inicial vive en `backend/resources/portfolio.json`: los seeders leen ese archivo y el frontend importa una copia generada, versionada en frontend/src/data/catalog.json. Tras editar la fuente, ejecutar node scripts/sync-catalog.mjs; CI comprueba que no haya divergencias. Así el build de Vercel funciona íntegramente desde frontend sin acceder a su directorio hermano. La web muestra ese contenido inmediatamente y actualiza proyectos, habilidades y servicios desde la API compatible (contrato 2). Ante un error conserva el contenido inicial. Una colección vacía válida se muestra vacía.
 
----
+Academia Luz al Mundo y Fundación Clínica del Alma encabezan los ocho proyectos. Las habilidades distinguen experiencia práctica, académica y aprendizaje aplicado. Los testimonios quedan sin publicar hasta disponer de evidencia y autorización.
 
-## Frontend — Setup
+## Desarrollo
 
-```bash
+Requisitos: Node.js 24, Composer 2 y PHP 8.3 con SQLite para la suite de desarrollo. El contenedor de producción mantiene PHP 8.2 con dependencias de ejecución compatibles.
+
+```powershell
 cd frontend
-npm install
-cp .env.example .env          # editar VITE_API_URL
-npm run dev                   # http://localhost:5173
-npm run build                 # build de producción
+npm ci
+npm run dev
 ```
 
-### Deploy en Vercel
-1. Conecta el repo en [vercel.com](https://vercel.com)
-2. Root Directory → `frontend`
-3. Variable de entorno: `VITE_API_URL=https://tu-backend.onrender.com/api`
-4. El `vercel.json` ya maneja el routing SPA
+Configurar `VITE_API_URL` en el entorno de desarrollo o de Vercel; la plantilla `.env.example` contiene únicamente configuración pública. Si se omite, el cliente usa `/api` y el servidor Vite de desarrollo tiene un proxy hacia el backend local. Las variables `VITE_*` quedan expuestas en el JavaScript del navegador.
 
----
+Para una demostración aislada en Windows:
 
-## Backend — Setup
-
-```bash
-cd backend
-composer install
-cp .env.example .env
-php artisan key:generate
-# Configurar DB_* en .env
-php artisan migrate --seed
-php artisan serve                          # http://localhost:8000
+```powershell
+./scripts/start-demo.ps1
 ```
 
-Ver [backend/README.md](backend/README.md) para la lista completa de endpoints y despliegue en Render.
+El script crea exclusivamente `output/portfolio-demo.sqlite`, carga el catálogo e inicia la API en `http://127.0.0.1:8010`. Usa configuración de proceso y credenciales sintéticas (demo@example.test / Local-demo-only-2026!). No modifica archivos `.env` reales. En otra consola, construir el frontend con `VITE_API_URL=http://127.0.0.1:8010/api` y ejecutar `npm run preview -- --host 127.0.0.1 --port 4174`. Estas credenciales nunca se usan en producción.
 
----
+## Validación
 
-## Panel Admin
-
-Accede en `/admin/login` con las credenciales de `ADMIN_EMAIL` / `ADMIN_PASSWORD`.
-
-| Módulo       | Funcionalidad                                    |
-|--------------|--------------------------------------------------|
-| Dashboard    | Estadísticas, gráficas mensuales y por categoría |
-| Proyectos    | Crear · editar · eliminar proyectos              |
-| Habilidades  | CRUD con categorías y nivel porcentual            |
-| Servicios    | Gestión de servicios y precios                   |
-| Contactos    | Ver mensajes · marcar leídos · eliminar          |
-
----
-
-## Variables de entorno
-
-### `frontend/.env`
-```env
-VITE_API_URL=http://localhost:8000/api
-```
-
-### `backend/.env` (claves principales)
-```env
-APP_KEY=                             # php artisan key:generate
-DB_DATABASE=rene_mejillon_dev
-ADMIN_EMAIL=admin@renemejillon.dev
-ADMIN_PASSWORD=cambia_esto
-CORS_ALLOWED_ORIGINS=https://tu-frontend.vercel.app
-```
-
----
-
-## Tecnologías utilizadas
-
-### Frontend
-- React 19 + Vite 6
-- Tailwind CSS 3
-- Framer Motion
-- React Type Animation
-- React Icons
-- React Intersection Observer
-
-### Backend
-- Laravel 12 + PHP 8.2
-- MySQL (producción) / SQLite (dev)
-- API REST con Sanctum
-- Deployado en Render
-
-### Herramientas & DevOps
-- Git & GitHub
-- Vercel (frontend)
-- Render (backend)
-- Docker (Dockerfile incluido)
-
----
-
-## Proyectos destacados
-
-### 🎓 Academia Luz al Mundo — *Casi terminado*
-Plataforma de gestión académica multi-rol (admin, teacher, student, representative, secretary) para academia de danza. Gestión de clases, pagos, asistencias, calificaciones y reportes PDF.
-
-**Stack:** Laravel 12 · React 19 · Inertia 2 · MySQL · Spatie Permission
-
-🔗 https://academialuzalmundo.com
-
----
-
-### 🏥 Fundación Clínica del Alma — *Casi terminado*
-Sistema integral de gestión para fundación de salud mental. Producción audiovisual, transmisiones en vivo y gestión de contenido digital.
-
-**Stack:** Laravel · React · MySQL · Tailwind CSS
-
-🔗 https://fundacionclinicadelalma.org
-
----
-
-### 🛒 Alpha Publicidad y Soporte Ecommerce — *En desarrollo*
-Plataforma ecommerce para empresa de publicidad, soporte técnico y producción multimedia. Catálogo de servicios, pasarela de pagos y módulo de presupuestos.
-
-**Stack:** Laravel · React · MySQL · Stripe · Tailwind CSS
-
----
-
-### 💼 Portfolio René Mejillón — *Este proyecto*
-CV digital y portfolio profesional con diseño dark, efecto terminal interactivo y animaciones. Frontend en Vercel + Backend API en Render.
-
-**Stack:** React 19 · Vite · Laravel 12 · Tailwind CSS · Framer Motion
-
-🔗 https://rene-mejillon-dev.vercel.app
-
----
-
-## Objetivo profesional
-
-Seguir creciendo como desarrollador Full Stack, construyendo productos digitales modernos, útiles y rentables que generen valor real para clientes y usuarios.
-
----
-
-## Contacto
-
-📧 Rm.solutions.tec@gmail.com · 📱 +593 981817493 · 📍 Guayaquil, Ecuador
-
-> *La tecnología no solo se usa, se transforma en soluciones.*
-
-
----
-
-## Estructura del proyecto
-
-```
-rene-mejillon-dev/
-├── frontend/    # React 18 + Vite + Tailwind CSS (deploy → Vercel)
-└── backend/     # Laravel 10 API REST            (deploy → Railway)
-```
-
----
-
-## Frontend — Setup
-
-```bash
+```powershell
 cd frontend
-npm install
-cp .env.example .env          # editar VITE_API_URL
-npm run dev                   # http://localhost:3000
-npm run build                 # build de producción
-```
-
-### Deploy en Vercel
-1. Conecta el repo en [vercel.com](https://vercel.com)
-2. Root Directory → `frontend`
-3. Variable de entorno: `VITE_API_URL=https://tu-backend.railway.app/api`
-4. El `vercel.json` ya maneja el routing SPA
-
----
-
-## Backend — Setup
-
-```bash
+npm run lint
+npm run build
+cd ..
+node scripts/check-content.mjs --dist
 cd backend
-composer create-project laravel/laravel . "^10"   # instalar Laravel
-# Copiar los archivos del repo (routes, Models, Controllers, migrations, seeders)
-cp .env.example .env
-php artisan key:generate
-# Configurar DB_* en .env
-php artisan migrate --seed
-php artisan serve                                   # http://localhost:8000
+php artisan test
+php vendor/bin/pint --test app routes database config/portfolio.php tests
 ```
 
-Ver [backend/README.md](backend/README.md) para la lista completa de endpoints y despliegue en Railway.
+PHPUnit utiliza SQLite en memoria. En el entorno restringido de Windows, PHP puede informar que los archivos no son legibles aun existiendo: ejecutar la suite con los permisos normales del usuario, sin modificar vendor para evadir ese diagnóstico.
 
----
+GitHub Actions prepara lint, build, comprobación de catálogo/CV y pruebas PHP en SQLite y PostgreSQL. La ejecución remota y los checks obligatorios se verifican tras publicar la rama autorizada.
 
-## Panel Admin
+## CV y privacidad
 
-Accede en `/admin/login` con las credenciales de `ADMIN_EMAIL` / `ADMIN_PASSWORD`.
+El CV canónico está en `frontend/public/cv/rene-mejillon-cv.pdf`. Se mantiene el alias `Rene_Mejillon_CV_2026.pdf` con los mismos bytes. El generador reproducible es `scripts/generate_cv.py` (dependencias en `scripts/requirements-pdf.txt`); primero genera un candidato en `output/pdf/`. Revisar visualmente sus dos páginas antes de copiarlo a las rutas públicas.
 
-| Módulo       | Funcionalidad                                   |
-|--------------|-------------------------------------------------|
-| Dashboard    | Estadísticas, gráficas mensuales y por categoría|
-| Proyectos    | Crear · editar · eliminar proyectos             |
-| Habilidades  | CRUD con categorías y nivel porcentual           |
-| Servicios    | Gestión de servicios y precios                  |
-| Contactos    | Ver mensajes · marcar leídos · eliminar         |
+Los PDF están marcados como binarios en `.gitattributes`. No contienen cédula ni identificadores personales de certificados. Las antiguas capturas dejaron de distribuirse; la tarjeta social tiene contenido profesional y no incluye métricas de demostración. Para nuevas capturas usar una copia con datos sintéticos completos.
 
----
+## Publicación
 
-## Variables de entorno
+Trabajar en ramas `codex/*`, validar localmente, revisar PR/Preview y obtener autorización antes de integrar a `main`, dado que esa integración activa Vercel. No se ejecutan seeders ni migraciones de producción de forma automática desde este trabajo.
 
-### `frontend/.env`
-```env
-VITE_API_URL=http://localhost:8000/api
-```
-
-### `backend/.env` (claves principales)
-```env
-APP_KEY=                          # php artisan key:generate
-DB_DATABASE=rene_mejillon_dev
-ADMIN_EMAIL=admin@renemejillon.dev
-ADMIN_PASSWORD=cambia_esto
-CORS_ALLOWED_ORIGINS=https://tu-frontend.vercel.app
-```
-
----
-
-## Contacto
-
-📧 Rm.solutions.tec@gmail.com · 📍 Guayaquil, Ecuador
-
----
-
-## 🚀 Tecnologías que utilizo
-
-### Frontend
-- React
-- JavaScript
-- HTML5
-- CSS3
-- Tailwind CSS
-
-### Backend
-- Laravel
-- PHP
-- Python
-- MySQL
-- API REST
-
-### Herramientas
-- Git & GitHub
-- Vercel
-- Railway
-- Adobe Suite
-
----
-
-## 📌 Proyectos Destacados
-
-### 🎓 Academia Luz al Mundo
-Sistema web institucional con plataforma administrativa escolar.
-
-🔗 https://www.academialuzalmundo.com/
-
-### 🏥 Fundación Clínica del Alma
-Sitio web institucional con proyección a sistema autoadministrable.
-
-🔗 https://fundacionclinicadelalma.org/
-
-### 🛒 Próximamente
-Sistema Ecommerce escalable orientado a ventas online.
-
----
-
-## 📈 Actualmente aprendiendo
-
-- TypeScript
-- Next.js
-- Docker
-- Arquitectura escalable
-- Automatización de procesos
-
----
-
-## 🎯 Objetivo Profesional
-
-Seguir creciendo como desarrollador Full Stack, creando productos digitales modernos, útiles y rentables.
-
----
-
-## 📫 Contacto
-
-📧 Rm.solutions.tec@gmail.com  
-📍 Guayaquil, Ecuador
-
----
-
-## ⚡ Frase personal
-
-> La tecnología no solo se usa, se transforma en soluciones.
+Ver [PROJECT.md](PROJECT.md) y [reporte de implementación](docs/portfolio-upgrade/IMPLEMENTATION-REPORT.md) para el contrato, la migración y los controles pendientes de publicación.

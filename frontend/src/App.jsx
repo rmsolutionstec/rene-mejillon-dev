@@ -1,64 +1,50 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Home from './pages/Home'
-import AdminLogin from './pages/admin/Login'
-import AdminLayout from './pages/admin/AdminLayout'
-import AdminDashboard from './pages/admin/Dashboard'
-import AdminProjects from './pages/admin/AdminProjects'
-import AdminSkills from './pages/admin/AdminSkills'
-import AdminServices from './pages/admin/AdminServices'
-import AdminContacts from './pages/admin/AdminContacts'
-import Loader from './components/layout/Loader'
-
+import { adminApi } from './services/api'
+const AdminLogin = lazy(() => import('./pages/admin/Login'))
+const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'))
+const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'))
+const AdminProjects = lazy(() => import('./pages/admin/AdminProjects'))
+const AdminSkills = lazy(() => import('./pages/admin/AdminSkills'))
+const AdminServices = lazy(() => import('./pages/admin/AdminServices'))
+const AdminContacts = lazy(() => import('./pages/admin/AdminContacts'))
 function ProtectedRoute({ children }) {
-  const token = localStorage.getItem('admin_token')
-  if (!token) return <Navigate to="/admin/login" replace />
-  // Token existe: renderizar la ruta protegida.
-  // La validación real del token ocurre via el interceptor 401 en api.js
-  // que redirige al login si el backend rechaza el token.
+  const [status, setStatus] = useState('loading')
+  const [attempt, setAttempt] = useState(0)
+  useEffect(() => {
+    let active = true
+    if (!localStorage.getItem('admin_token')) { setStatus('unauthorized'); return }
+    setStatus('loading')
+    adminApi.me().then(() => { if (active) setStatus('ready') }).catch((error) => {
+      if (active) setStatus(error.response?.status === 401 ? 'unauthorized' : 'error')
+    })
+    return () => { active = false }
+  }, [attempt])
+  if (status === 'unauthorized') return <Navigate to="/admin/login" replace />
+  if (status === 'error') return <main className="section-container py-20"><p role="alert">No se pudo verificar la sesión. Revisa la conexión con la API.</p><button className="btn-secondary mt-4" onClick={() => setAttempt((value) => value + 1)}>Reintentar</button></main>
+  if (status !== 'ready') return <p className="p-10" role="status">Verificando sesión…</p>
   return children
 }
-
 export default function App() {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800)
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (loading) return <Loader />
-
-  return (
-    <AnimatePresence mode="wait">
+  const { pathname } = useLocation()
+  return <>
+    {pathname.startsWith('/admin') && <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>}
+    <Suspense fallback={<p className="p-10" role="status">Cargando…</p>}>
       <Routes>
-        {/* Public */}
         <Route path="/" element={<Home />} />
-
-        {/* Admin Auth */}
         <Route path="/admin/login" element={<AdminLogin />} />
-
-        {/* Admin Protected */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <AdminLayout />
-            </ProtectedRoute>
-          }
-        >
+        <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
           <Route index element={<Navigate to="/admin/dashboard" replace />} />
           <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="projects"  element={<AdminProjects />} />
-          <Route path="skills"    element={<AdminSkills />} />
-          <Route path="services"  element={<AdminServices />} />
-          <Route path="contacts"  element={<AdminContacts />} />
+          <Route path="projects" element={<AdminProjects />} />
+          <Route path="skills" element={<AdminSkills />} />
+          <Route path="services" element={<AdminServices />} />
+          <Route path="contacts" element={<AdminContacts />} />
         </Route>
-
-        {/* 404 */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </AnimatePresence>
-  )
+    </Suspense>
+  </>
 }

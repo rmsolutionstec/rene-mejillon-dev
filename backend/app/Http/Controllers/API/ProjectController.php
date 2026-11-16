@@ -3,75 +3,38 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::orderBy('featured', 'desc')
-            ->orderBy('year', 'desc')
-            ->get();
-
-        return response()->json(['data' => $projects]);
+        return response()->json(['data' => Project::when(! $request->is('api/admin/*'), fn ($query) => $query->where('is_published', true))->orderBy('display_order')->orderByDesc('featured')->orderByDesc('year')->get(), 'meta' => ['catalog_version' => 2]]);
     }
 
     public function show($id)
     {
-        $project = Project::findOrFail($id);
-
-        return response()->json(['data' => $project]);
+        return response()->json(['data' => Project::where('is_published', true)->findOrFail($id)]);
     }
 
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
-        $validated = $request->validate([
-            'title'       => 'required|string|max:200',
-            'short_desc'  => 'nullable|string|max:300',
-            'description' => 'nullable|string',
-            'category'    => 'nullable|string|max:100',
-            'status'      => 'nullable|string|max:50',
-            'tech'        => 'nullable|array',
-            'tech.*'      => 'string|max:50',
-            'live_url'    => 'nullable|url|max:255',
-            'github_url'  => 'nullable|url|max:255',
-            'year'        => 'nullable|integer|min:2010|max:2050',
-            'featured'    => 'boolean',
-        ]);
-
-        $project = Project::create($validated);
-
-        return response()->json(['data' => $project], 201);
+        return response()->json(['data' => Project::create($request->validated())], 201);
     }
 
-    public function update(Request $request, $id)
+    public function update(ProjectRequest $request, $id)
     {
         $project = Project::findOrFail($id);
-
-        $validated = $request->validate([
-            'title'       => 'sometimes|required|string|max:200',
-            'short_desc'  => 'nullable|string|max:300',
-            'description' => 'nullable|string',
-            'category'    => 'nullable|string|max:100',
-            'status'      => 'nullable|string|max:50',
-            'tech'        => 'nullable|array',
-            'tech.*'      => 'string|max:50',
-            'live_url'    => 'nullable|url|max:255',
-            'github_url'  => 'nullable|url|max:255',
-            'year'        => 'nullable|integer|min:2010|max:2050',
-            'featured'    => 'boolean',
-        ]);
-
-        $project->update($validated);
+        $project->update($request->validated());
 
         return response()->json(['data' => $project]);
     }
 
     public function destroy($id)
     {
-        $project = Project::findOrFail($id);
-        $project->delete();
+        Project::findOrFail($id)->delete();
 
         return response()->json(['message' => 'Proyecto eliminado.']);
     }

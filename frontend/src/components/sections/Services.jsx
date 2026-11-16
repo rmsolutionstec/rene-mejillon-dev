@@ -6,7 +6,7 @@ import {
   FaDesktop, FaCogs, FaServer,
 } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
-import { services } from '../../data/portfolioData'
+import { usePortfolio } from '../../hooks/usePortfolio'
 
 const ICON_MAP = {
   FaCode: FaCode, FaRocket: FaRocket, FaMobile: FaMobileAlt,
@@ -15,6 +15,7 @@ const ICON_MAP = {
 }
 
 export default function Services() {
+  const { services } = usePortfolio()
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08 })
 
   return (
@@ -37,7 +38,7 @@ export default function Services() {
         <SectionTitle
           eyebrow="Servicios"
           title="¿Qué puedo hacer por ti?"
-          subtitle="Ofrezco soluciones digitales completas, desde el concepto hasta el deploy en producción"
+          subtitle="Desarrollo web, mantenimiento y servicios TI con un alcance acordado para cada proyecto."
           inView={inView}
         />
 
@@ -47,7 +48,7 @@ export default function Services() {
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={false}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`relative rounded-2xl p-7 space-y-5 transition-all duration-300 group overflow-hidden
@@ -83,7 +84,7 @@ export default function Services() {
                     }}
                   >
                     <FaStar size={10} />
-                    Popular
+                    Principal
                   </div>
                 )}
 
@@ -145,7 +146,7 @@ export default function Services() {
 
         {/* Custom project CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.7 }}
           className="mt-12 p-8 rounded-2xl text-center"

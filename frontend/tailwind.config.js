@@ -18,7 +18,7 @@ export default {
         'red-glow':        'rgba(255,30,30,0.3)',
         'white-text':      '#f5f5f5',
         'gray-text':       '#a0a0a0',
-        'gray-dim':        '#666666',
+        'gray-dim':        '#a0a0a0',
       },
       fontFamily: {
         sans:    ['Inter', 'system-ui', 'sans-serif'],

@@ -10,7 +10,8 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'is_published',
+        'title', 'catalog_key',
         'description',
         'icon',
         'price',
@@ -19,7 +20,8 @@ class Service extends Model
     ];
 
     protected $casts = [
+        'is_published' => 'boolean',
         'features' => 'array',
-        'popular'  => 'boolean',
+        'popular' => 'boolean',
     ];
 }

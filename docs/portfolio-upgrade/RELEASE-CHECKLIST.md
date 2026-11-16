@@ -1,56 +1,34 @@
-# RELEASE-CHECKLIST.md — Verificación Pre-Despliegue y Procedimiento de Release
+# Release preparado localmente — 15/11/2026
 
-**Regla Mandatoria:** Ningún despliegue a producción se realiza sin la autorización expresa del propietario del portafolio.
+**Regla:** no integrar a main, subir cambios que activen producción ni modificar la base de producción sin autorización expresa del propietario.
 
----
+## Listo localmente
 
-## 1. Verificaciones Pre-Release en Rama Local
+- [x] Rama codex/linkedin-portfolio, separada de main.
+- [x] Datos alineados con LinkedIn y fuentes diferenciadas.
+- [x] Código de aplicación y documentación actualizados.
+- [x] Instalación npm ci, lint y build.
+- [x] Validación de catálogo y CV en dist.
+- [x] Pruebas Laravel y formato PHP.
+- [x] Auditorías de dependencias sin alertas reportadas.
+- [x] Responsive y recorridos funcionales contra API/SQLite de demostración.
+- [x] PDF actualizado y protegido de conversiones de texto por Git.
+- [x] Archivos .env reales sin cambios; artefactos locales fuera de Git.
 
-- [ ] Todos los cambios están organizados en commits convencionales (`feat:`, `fix:`, `docs:`).
-- [ ] La rama de trabajo no contiene archivos `.env` sin ignorar ni credenciales privadas.
-- [ ] El archivo PDF del CV está presente en `frontend/public/cv/rene-mejillon-cv.pdf`.
-- [ ] La compilación local de producción se ejecuta con éxito:
-  ```bash
-  cd frontend && npm run build
-  ```
-- [ ] No hay errores de consola en la vista previa del build:
-  ```bash
-  cd frontend && npm run preview
-  ```
-- [ ] Se probó la descarga física del PDF desde la vista previa local.
+## Pendiente de revisión y autorización
 
----
+- [ ] Revisar diff, contenido y CV.
+- [ ] Autorizar publicación de la rama y comprobar CI/Preview.
+- [ ] Confirmar VITE_API_URL, CORS y separación de datos por entorno.
+- [ ] Confirmar reglas de main y checks obligatorios.
+- [ ] Confirmar despliegue/configuración real de Render.
+- [ ] Respaldar BD y aprobar migraciones/sincronización.
+- [ ] Revisar vista previa del plan portfolio:sync; decidir qué registros publicar.
+- [ ] Autorizar merge a main / despliegue.
+- [ ] Ejecutar comprobaciones del dominio de producción, API, headers y CV.
 
-## 2. Protocolo de Aprobación
+## Recuperación
 
-1. **Presentación de Evidencias:** El Tech Lead presenta al usuario el reporte de tareas completadas y la evidencia de funcionamiento.
-2. **Autorización del Usuario:** El usuario autoriza expresamente el envío a la rama remota (`git push origin main`).
-3. **Monitoreo de Despliegue en Vercel:**
-   - Verificar en el dashboard de Vercel que el build finalice en estado *Ready*.
-   - Comprobar que no existan errores de rutas o reescritura.
+Registrar el commit y deployment de frontend y API por separado. Revertir un deployment de Vercel no revierte el backend ni los datos. Las migraciones nuevas son aditivas, pero su reversión elimina columnas de catálogo/publicación y tablas de caché: preservar respaldo y coordinar la versión del código antes de un rollback de base de datos.
 
----
-
-## 3. Smoke Tests Post-Despliegue en Producción (https://rene-mejillon-dev.vercel.app)
-
-- [ ] Carga inicial del sitio en HTTPS sin errores SSL ni recursos bloqueados.
-- [ ] **Prueba de fuego del CV:**
-  - Clic en "Descargar CV" en Hero: Descarga un PDF válido de tamaño > 10KB.
-  - Clic en "Descargar CV" en Navbar móvil: Descarga el PDF válido.
-  - Verificar que el archivo no contenga HTML ni esté corrupto.
-- [ ] Comprobación del formulario de contacto en vivo.
-- [ ] Inspección de meta tags OpenGraph mediante herramienta de vista previa social.
-- [ ] Verificación de `https://rene-mejillon-dev.vercel.app/robots.txt` y `sitemap.xml`.
-
----
-
-## 4. Plan de Contingencia y Rollback
-
-Si se detecta un error crítico tras el despliegue:
-1. Revertir inmediatamente desde el dashboard de Vercel al deployment previo funcional con un clic (Instant Rollback).
-2. En Git local, generar un commit de reversión:
-   ```bash
-   git revert HEAD --no-edit
-   git push origin main
-   ```
-3. Registrar la causa raíz en `AUDIT.md` para diagnóstico.
+No ejecutar migrate:fresh ni seeders indiscriminados en producción.

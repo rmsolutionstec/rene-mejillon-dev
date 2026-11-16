@@ -33,6 +33,21 @@
 
 ## 2. REGLAS MANDATORIAS PARA TODOS LOS AGENTES
 
+### Actualización de contenido del propietario — 15/11/2026
+
+Para las siguientes mejoras, aplicar la matriz vigente de `docs/portfolio-upgrade/CONTENT-VERIFICATION.md`, contrastada con el documento aportado y las secciones visibles de LinkedIn. Esta actualización sustituye los datos incompatibles anteriores de este archivo y las skills:
+
+- Trayectoria TI desde mayo de 2008: RM Solutions Tec hasta julio de 2023; Alpha Publicidad, Soporte y Desarrollo desde agosto de 2023. REMETECS es un seudónimo profesional.
+- Experiencia práctica con Laravel/React desde 2023; no convertir toda la trayectoria TI en antigüedad full stack.
+- Posicionamiento principal: desarrollo full stack con PHP, Laravel, JavaScript, React, MySQL e Inertia.js; soporte e infraestructura como trayectoria previa.
+- Academia Luz al Mundo es el proyecto principal: desarrollo individual, en uso y evolución continua, enero de 2025–actualidad según información aportada. Fundación es el segundo caso: portal institucional, desarrollo individual, julio–diciembre de 2025 según información aportada. No confundir fechas de proyectos y vínculos laborales.
+- Mantener los ocho proyectos en inventario y revalidar sus fichas; la prioridad previa de TTS pasa a ser complementaria frente a Academia.
+- Python/Django: experiencia académica; Linux/Docker: aprendizaje aplicado. Diferenciar proyectos personales comprobados de servicios comerciales consolidados.
+- Contacto profesional: `renemejillon@alphaecuador.com`; servicios Alpha: `contacto@alphaecuador.com`.
+- Estudios: diciembre 2022–junio 2025; registro del título: 17/06/2026. Omitir cédula e identificadores personales de certificados.
+- No publicar capturas con datos reales; usar copia aislada, datos sintéticos completos y rótulo de demostración.
+- Mantener coherencia entre web, CV aprobado, datos/API/seeders y metadatos. No alterar producción sin autorización expresa.
+
 1. **Inspeccionar antes de modificar:** Nunca asumir la existencia de archivos o rutas; verificarlos con herramientas de lectura o consola.
 2. **Cero Secretos en Git:** NUNCA crear, editar ni commitear archivos `.env` reales con claves privadas. Usar siempre `.env.example` con placeholders.
 3. **No romper la descarga del CV:** El archivo `frontend/public/cv/rene-mejillon-cv.pdf` debe mantenerse accesible y con cabecera binaria `%PDF-` válida.

@@ -1,0 +1,58 @@
+name: Portfolio quality
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/**']
+permissions:
+  contents: read
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+        working-directory: frontend
+      - run: npm audit --audit-level=high
+        working-directory: frontend
+      - run: npm run lint
+        working-directory: frontend
+      - run: npm run build
+        working-directory: frontend
+      - run: node scripts/check-content.mjs --dist
+  backend:
+    strategy:
+      matrix:
+        database: [sqlite, postgres]
+    runs-on: ubuntu-latest
+    env:
+      PORTFOLIO_TEST_POSTGRES: ${{ matrix.database == 'postgres' && '1' || '0' }}
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: portfolio_test
+          POSTGRES_USER: portfolio
+          POSTGRES_PASSWORD: portfolio_test_only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 10s
+          --health-timeout 5s --health-retries 5
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_sqlite, pdo_pgsql
+          coverage: none
+      - run: composer install --no-interaction --prefer-dist
+      - run: composer audit --locked
+      - run: php artisan test
+      - run: vendor/bin/pint --test app routes database config/portfolio.php tests/Feature/PortfolioApiTest.php tests/TestCase.php

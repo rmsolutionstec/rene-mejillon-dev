@@ -19,6 +19,13 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('inicio')
   const observerRef = useRef(null)
 
+  useEffect(() => {
+    if (!menuOpen) return
+    const closeOnEscape = (event) => { if (event.key === 'Escape') setMenuOpen(false) }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [menuOpen])
+
   /* Scroll: change navbar bg */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -57,7 +64,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -80, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -158,13 +165,13 @@ export default function Navbar() {
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="md:hidden p-2 rounded-lg text-gray-text hover:text-white-text transition-colors"
-                aria-label="Toggle menu"
+                aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} aria-controls="mobile-navigation"
               >
                 <AnimatePresence mode="wait">
                   {menuOpen ? (
                     <motion.span
                       key="close"
-                      initial={{ rotate: -90, opacity: 0 }}
+                      initial={false}
                       animate={{ rotate: 0, opacity: 1 }}
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.2 }}
@@ -174,7 +181,7 @@ export default function Navbar() {
                   ) : (
                     <motion.span
                       key="open"
-                      initial={{ rotate: 90, opacity: 0 }}
+                      initial={false}
                       animate={{ rotate: 0, opacity: 1 }}
                       exit={{ rotate: -90, opacity: 0 }}
                       transition={{ duration: 0.2 }}
@@ -193,7 +200,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.97 }}
+            initial={false}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.97 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
@@ -205,11 +212,11 @@ export default function Navbar() {
               backdropFilter: 'blur(20px)',
             }}
           >
-            <nav className="flex flex-col p-4 gap-1">
+            <nav id="mobile-navigation" aria-label="Navegación móvil" className="flex flex-col p-4 gap-1">
               {NAV_LINKS.map(({ href, label }, i) => (
                 <motion.button
                   key={href}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={false}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => scrollTo(href)}
@@ -226,7 +233,7 @@ export default function Navbar() {
               <div className="divider-red my-2" />
 
               <motion.a
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 href={personalInfo.cvUrl}

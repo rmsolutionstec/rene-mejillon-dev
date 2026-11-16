@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import {
-  FaGithub, FaLinkedin, FaTwitter, FaWhatsapp,
+  FaGithub, FaLinkedin, FaWhatsapp,
   FaEnvelope, FaMapMarkerAlt, FaHeart,
 } from 'react-icons/fa'
 import { personalInfo } from '../../data/portfolioData'
@@ -18,7 +18,7 @@ const NAV_LINKS = [
 const SOCIAL = [
   { href: 'https://github.com/rmsolutionstec',      Icon: FaGithub,   label: 'GitHub'   },
   { href: 'https://linkedin.com/in/renemejillon', Icon: FaLinkedin, label: 'LinkedIn' },
-  { href: 'https://wa.me/593990000000',           Icon: FaWhatsapp, label: 'WhatsApp' },
+  { href: 'https://wa.me/593981817493',           Icon: FaWhatsapp, label: 'WhatsApp' },
 ]
 
 const TECH_STACK = ['Laravel', 'React', 'MySQL', 'Tailwind', 'Docker', 'Vercel']
@@ -170,7 +170,7 @@ export default function Footer() {
               <li className="flex items-center gap-3 text-gray-text text-sm">
                 <FaWhatsapp size={14} className="text-red-main flex-shrink-0" />
                 <a
-                  href="https://wa.me/593990000000"
+                  href="https://wa.me/593981817493"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-red-main transition-colors"

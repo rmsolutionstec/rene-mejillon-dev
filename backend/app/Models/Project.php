@@ -10,7 +10,8 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'is_published',
+        'image', 'title', 'catalog_key', 'display_order', 'period', 'participation', 'achievements',
         'short_desc',
         'description',
         'category',
@@ -23,8 +24,9 @@ class Project extends Model
     ];
 
     protected $casts = [
-        'tech'     => 'array',
+        'is_published' => 'boolean',
+        'tech' => 'array', 'achievements' => 'array',
         'featured' => 'boolean',
-        'year'     => 'integer',
+        'year' => 'integer',
     ];
 }

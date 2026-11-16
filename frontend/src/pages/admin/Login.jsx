@@ -99,11 +99,11 @@ export default function AdminLogin() {
           <form onSubmit={handleSubmit} className="space-y-5" noValidate>
             {/* Email */}
             <div>
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="login-email" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Email
               </label>
               <input
-                type="email"
+                id="login-email" type="email" name="email" required
                 value={form.email}
                 onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                 placeholder="admin@renemejillon.dev"
@@ -114,12 +114,12 @@ export default function AdminLogin() {
 
             {/* Password */}
             <div>
-              <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+              <label htmlFor="login-password" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                 Contraseña
               </label>
               <div className="relative">
                 <input
-                  type={show ? 'text' : 'password'}
+                  id="login-password" name="password" required type={show ? 'text' : 'password'}
                   value={form.password}
                   onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))}
                   placeholder="••••••••"
@@ -128,7 +128,7 @@ export default function AdminLogin() {
                 />
                 <button
                   type="button"
-                  onClick={() => setShow(!show)}
+                  onClick={() => setShow(!show)} aria-label={show ? "Ocultar contraseña" : "Mostrar contraseña"}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-dim hover:text-gray-text transition-colors"
                 >
                   {show ? <FaEyeSlash size={15} /> : <FaEye size={15} />}
@@ -144,7 +144,7 @@ export default function AdminLogin() {
                 className="text-red-main text-sm flex items-center gap-2"
               >
                 <FaLock size={12} />
-                {error}
+                <span role="alert">{error}</span>
               </motion.p>
             )}
 

@@ -5,36 +5,6 @@ import SectionTitle from '../ui/SectionTitle'
 import { experience } from '../../data/portfolioData'
 
 export default function Experience() {
-    // Calcula la duración en años y meses entre dos fechas
-    function calcularDuracion(startYear, endYear, current) {
-      const now = new Date();
-      const start = new Date(startYear, 0, 1);
-      const end = endYear ? new Date(endYear, 0, 1) : now;
-      let years = end.getFullYear() - start.getFullYear();
-      let months = end.getMonth() - start.getMonth();
-      if (months < 0) {
-        years--;
-        months += 12;
-      }
-      // Si la experiencia es actual y empezó este año, mostrar solo meses
-      if (current && years === 0 && months > 0) {
-        return `${months} mes${months > 1 ? 'es' : ''}`;
-      }
-      // Si solo hay años
-      if (months === 0) {
-        return `${years} año${years > 1 ? 's' : ''}`;
-      }
-      // Si hay años y meses
-      if (years > 0 && months > 0) {
-        return `${years} año${years > 1 ? 's' : ''} ${months} mes${months > 1 ? 'es' : ''}`;
-      }
-      // Si solo hay meses
-      if (years === 0 && months > 0) {
-        return `${months} mes${months > 1 ? 'es' : ''}`;
-      }
-      // Si es exactamente 0 años y 0 meses
-      return 'Menos de 1 mes';
-    }
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08 })
 
   return (
@@ -77,7 +47,7 @@ export default function Experience() {
               return (
                 <motion.div
                   key={exp.id}
-                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                  initial={false}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.7, delay: i * 0.15 }}
                   className={`relative flex ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} flex-row items-start gap-6 md:gap-10`}
@@ -144,7 +114,7 @@ export default function Experience() {
                     <div className="flex flex-wrap gap-4 text-xs text-gray-dim">
                       <span className="flex items-center gap-1.5">
                         <FaCalendarAlt size={11} className="text-red-main" />
-                        {exp.period} · {calcularDuracion(exp.startYear, exp.endYear, exp.current)}
+                        {exp.period}
                       </span>
                       <span className="flex items-center gap-1.5">
                         <FaMapMarkerAlt size={11} className="text-red-main" />

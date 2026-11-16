@@ -1,179 +1,462 @@
 %PDF-1.4
-%âãÏÓ
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
 <<
-/Type /Catalog
-/Pages 2 0 R
+/F1 2 0 R /F2 3 0 R
 >>
 endobj
 2 0 obj
 <<
-/Type /Pages
-/Kids [5 0 R 7 0 R]
-/Count 2
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
 >>
 endobj
 3 0 obj
 <<
-/Type /Font
-/Subtype /Type1
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
 >>
 endobj
 4 0 obj
 <<
-/Type /Font
-/Subtype /Type1
-/BaseFont /Helvetica-Bold
-/Encoding /WinAnsiEncoding
+/Contents 9 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
 >>
 endobj
 5 0 obj
 <<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 595 842]
-/Contents 6 0 R
-/Resources << /Font << /F1 3 0 R /F2 4 0 R >> >>
+/Contents 10 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
 >>
 endobj
 6 0 obj
 <<
-/Length 5537
+/PageMode /UseNone /Pages 8 0 R /Type /Catalog
 >>
-stream
-0.060 0.060 0.060 rg 0.0 770.0 595.0 72.0 re f
-0.900 0.120 0.120 rg 0.0 767.0 595.0 3.0 re f
-BT /F2 22 Tf 1.000 1.000 1.000 rg 40.0 805.0 Td (RENÉ DAVID MEJILLÓN TORRES) Tj ET
-BT /F2 11 Tf 0.900 0.200 0.200 rg 40.0 788.0 Td (TECNÓLOGO EN DESARROLLO DE SOFTWARE | FULL STACK & TI) Tj ET
-BT /F1 8.5 Tf 0.800 0.800 0.800 rg 40.0 774.0 Td (Guayaquil, Ecuador | Email: rm.solutions.tec@gmail.com | Tel/WhatsApp: +593 981817493) Tj ET
-BT /F1 8.5 Tf 0.800 0.800 0.800 rg 360.0 774.0 Td (GitHub: rmsolutionstec | Web: rene-mejillon-dev.vercel.app) Tj ET
-BT /F2 11 Tf 0.100 0.100 0.100 rg 40.0 740.0 Td (1. PERFIL PROFESIONAL) Tj ET
-0.800 0.800 0.800 RG 0.8 w 40.0 736.0 m 555.0 736.0 l S
-BT /F1 9 Tf 0.250 0.250 0.250 rg 40.0 722.0 Td (Desarrollador Full Stack y Tecnólogo en Desarrollo de Software \(graduado en 2025\) con sólida trayectoria) Tj ET
-BT /F1 9 Tf 0.250 0.250 0.250 rg 40.0 709.0 Td (desde 2015 en soporte informático, infraestructura de servidores, redes y soluciones tecnológicas para empresas.) Tj ET
-BT /F1 9 Tf 0.250 0.250 0.250 rg 40.0 696.0 Td (Especializado en arquitectura de aplicaciones web con Laravel y React, desarrollo de software de escritorio con) Tj ET
-BT /F1 9 Tf 0.250 0.250 0.250 rg 40.0 683.0 Td (Python y PySide6, modelado de bases de datos relacionales y automatización de flujos con integración de modelos) Tj ET
-BT /F1 9 Tf 0.250 0.250 0.250 rg 40.0 670.0 Td (de Inteligencia Artificial locales \(Ollama, Qwen\). Enfoque en código limpio, seguridad, alto rendimiento y valor real.) Tj ET
-BT /F2 11 Tf 0.100 0.100 0.100 rg 40.0 647.0 Td (2. COMPETENCIAS TÉCNICAS) Tj ET
-0.800 0.800 0.800 RG 0.8 w 40.0 643.0 m 555.0 643.0 l S
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 629.0 Td (Desarrollo Frontend:) Tj ET
-BT /F1 9 Tf 0.200 0.200 0.200 rg 185.0 629.0 Td (React.js, JavaScript \(ES6+\), Vite, Tailwind CSS, Bootstrap, HTML5, CSS3, Framer Motion, SPA.) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 615.0 Td (Desarrollo Backend:) Tj ET
-BT /F1 9 Tf 0.200 0.200 0.200 rg 185.0 615.0 Td (PHP 8.2+, Laravel 12, APIs RESTful, Node.js, Autenticación Sanctum, Spatie Permission, MVC.) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 601.0 Td (Bases de Datos:) Tj ET
-BT /F1 9 Tf 0.200 0.200 0.200 rg 185.0 601.0 Td (MySQL, PostgreSQL, MariaDB, SQLite \(modelado relacional, migraciones, consultas optimizadas\).) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 587.0 Td (Automatización & IA:) Tj ET
-BT /F1 9 Tf 0.200 0.200 0.200 rg 185.0 587.0 Td (Python, PySide6, n8n, Ollama, Qwen, Tesseract OCR, Edge TTS, FFmpeg, procesamiento de medios.) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 573.0 Td (Infraestructura & DevOps:) Tj ET
-BT /F1 9 Tf 0.200 0.200 0.200 rg 185.0 573.0 Td (Linux \(Ubuntu/Debian\), Windows, Docker, Nginx, Git, GitHub, Tailscale, SSH, Vercel, Render.) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 559.0 Td (Soporte & Multimedia:) Tj ET
-BT /F1 9 Tf 0.200 0.200 0.200 rg 185.0 559.0 Td (Diagnóstico y mantenimiento PC, redes LAN/Wi-Fi, videovigilancia CCTV, OBS Studio, vMix.) Tj ET
-BT /F2 11 Tf 0.100 0.100 0.100 rg 40.0 535.0 Td (3. EXPERIENCIA LABORAL) Tj ET
-0.800 0.800 0.800 RG 0.8 w 40.0 531.0 m 555.0 531.0 l S
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 517.0 Td (ALPHA Publicidad y Soporte / REMETECS) Tj ET
-BT /F1 9 Tf 0.500 0.500 0.500 rg 440.0 517.0 Td (2015 - Presente | Ecuador) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 504.0 Td (Desarrollador Full Stack & Especialista en Soluciones Tecnológicas) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 490.0 Td (- Desarrollo e implementación de sistemas web empresariales a medida con arquitecturas Laravel + React.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 478.0 Td (- Soporte e infraestructura integral: instalación de redes LAN/Wi-Fi, servidores Linux para uso local y CCTV.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 466.0 Td (- Automatización de flujos de trabajo, optimización de estaciones de trabajo y soporte presencial/remoto.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 454.0 Td (- Tecnologías clave: PHP, Laravel, React, MySQL, Python, Linux, Nginx, Docker, Bootstrap, Tailwind CSS.) Tj ET
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 434.0 Td (Fundación Clínica del Alma) Tj ET
-BT /F1 9 Tf 0.500 0.500 0.500 rg 440.0 434.0 Td (2024 - Presente | Guayaquil) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 421.0 Td (Técnico Multimedia & Gestión Digital) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 407.0 Td (- Mantenimiento, aseguramiento de rendimiento y actualización del portal institucional de la fundación.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 395.0 Td (- Gestión de transmisiones en vivo multiplataforma, escenografía digital y producción técnica con vMix y OBS.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 383.0 Td (- Automatización de procesamiento y optimización de contenido digital multimedia para difusión social.) Tj ET
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 363.0 Td (Iglesia Cuadrangular Central) Tj ET
-BT /F1 9 Tf 0.500 0.500 0.500 rg 440.0 363.0 Td (2016 - 2018 | Guayaquil) Tj ET
-BT /F2 9 Tf 0.850 0.100 0.100 rg 40.0 350.0 Td (Diseñador Multimedia y Productor Técnico) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 336.0 Td (- Producción técnica de audio, video e iluminación para eventos en vivo y transmisiones digitales.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 324.0 Td (- Diseño de material gráfico publicitario y soporte informático en equipos audiovisuales y de computación.) Tj ET
-BT /F1 8 Tf 0.600 0.600 0.600 rg 40.0 25.0 Td (René Mejillón | Currículum Vitae Profesional | Página 1 de 2) Tj ET
-
-endstream
 endobj
 7 0 obj
 <<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 595 842]
-/Contents 8 0 R
-/Resources << /Font << /F1 3 0 R /F2 4 0 R >> >>
+/Author (Ren\351 David Mejill\363n Torres) /CreationDate (D:20261115191723-05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115191723-05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (Ren\351 David Mejill\363n Torres - Curr\355culum) /Trapped /False
 >>
 endobj
 8 0 obj
 <<
-/Length 5993
+/Count 2 /Kids [ 4 0 R 5 0 R ] /Type /Pages
+>>
+endobj
+9 0 obj
+<<
+/Length 4784
 >>
 stream
-0.060 0.060 0.060 rg 0.0 815.0 595.0 27.0 re f
-0.900 0.120 0.120 rg 0.0 812.0 595.0 3.0 re f
-BT /F2 11 Tf 1.000 1.000 1.000 rg 40.0 822.0 Td (RENÉ MEJILLÓN - PROYECTOS DESTACADOS Y FORMACIÓN \(Pág. 2\)) Tj ET
-BT /F2 11 Tf 0.100 0.100 0.100 rg 40.0 785.0 Td (4. PROYECTOS TÉCNICOS DESTACADOS) Tj ET
-0.800 0.800 0.800 RG 0.8 w 40.0 781.0 m 555.0 781.0 l S
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 767.0 Td (Alpha Studio TTS Latino - Software de Escritorio) Tj ET
-BT /F2 8.5 Tf 0.100 0.600 0.100 rg 450.0 767.0 Td ([REPOSITORIO PÚBLICO]) Tj ET
-BT /F1 8.5 Tf 0.850 0.100 0.100 rg 40.0 755.0 Td (Stack: Python, PySide6, Edge TTS, FFmpeg | GitHub: github.com/rmsolutionstec/alpha-ecuador-tts) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 742.0 Td (- Aplicación de escritorio distribuible con interfaz gráfica nativa \(PySide6\) y modo consola \(CLI\).) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 730.5 Td (- Conversión de texto a audio con perfiles de voz personalizables \(tasa, tono, volumen\) y exportación a MP3.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 719.0 Td (- Generación automática de subtítulos sincronizados \(SRT\) y procesamiento avanzado de audio con FFmpeg.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 707.5 Td (- Arquitectura modular desacoplada con suite de pruebas automatizadas y empaquetado autónomo.) Tj ET
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 690.0 Td (Academia Luz al Mundo - Plataforma Educativa Multi-Rol) Tj ET
-BT /F1 8.5 Tf 0.500 0.500 0.500 rg 450.0 690.0 Td (En producción activa) Tj ET
-BT /F1 8.5 Tf 0.850 0.100 0.100 rg 40.0 678.0 Td (Stack: Laravel 12, React 19, Inertia.js 2, MySQL, Spatie Permission, Tailwind CSS | academialuzalmundo.com) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 665.0 Td (- Sistema multi-rol con 5 niveles de acceso independientes \(Administrador, Docente, Alumno, Representante, Secretaría\).) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 653.5 Td (- Módulo financiero completo: asignación de mensualidades, becas, descuentos y emisión de recibos en PDF.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 642.0 Td (- Control académico de clases, asistencias diarias, calificaciones, tareas escolares y reportes automatizados.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 630.5 Td (- Panel de administración integral con más de 25 módulos de gestión y alta seguridad transaccional.) Tj ET
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 613.0 Td (AlphaServer - Infraestructura Linux y Automatización Privada) Tj ET
-BT /F1 8.5 Tf 0.500 0.500 0.500 rg 450.0 613.0 Td (Operativo \(Uso continuo\)) Tj ET
-BT /F1 8.5 Tf 0.850 0.100 0.100 rg 40.0 601.0 Td (Stack: Linux \(Ubuntu Server\), Nginx, Docker, Tailscale, n8n, Python, Ollama, SSH) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 588.0 Td (- Servidor privado dedicado a orquestación de tareas de IA local \(modelos Qwen/Ollama sin dependencia de nube\).) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 576.5 Td (- Red privada mallada \(Tailscale VPN\) para comunicación cifrada punto a punto entre servidor y clientes remotos.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 565.0 Td (- Flujos automatizados con n8n y scripts de procesamiento continuo en Python para extracción de datos y multimedia.) Tj ET
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 547.5 Td (Portafolio René Mejillón - Arquitectura Desacoplada SPA + REST API) Tj ET
-BT /F2 8.5 Tf 0.100 0.600 0.100 rg 450.0 547.5 Td ([REPOSITORIO PÚBLICO]) Tj ET
-BT /F1 8.5 Tf 0.850 0.100 0.100 rg 40.0 535.5 Td (Stack: React 18, Vite, Tailwind CSS, Framer Motion, Laravel 12 API, Docker, Sanctum | rene-mejillon-dev.vercel.app) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 522.5 Td (- Frontend SPA desplegado en Vercel con arquitectura de carga instantánea 'Offline-first' \(fallback estático\).) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 511.0 Td (- Backend en Laravel 12 bajo Docker en Render con rate limiting estricto, sanitización XSS y Sanctum tokens.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 499.5 Td (- Panel de administración protegido para gestión de proyectos, habilidades y bandeja de contactos.) Tj ET
-BT /F2 11 Tf 0.100 0.100 0.100 rg 40.0 478.0 Td (5. EDUCACIÓN Y FORMACIÓN ACADÉMICA) Tj ET
-0.800 0.800 0.800 RG 0.8 w 40.0 474.0 m 555.0 474.0 l S
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 460.0 Td (Tecnólogo Superior en Desarrollo de Software) Tj ET
-BT /F1 9 Tf 0.500 0.500 0.500 rg 415.0 460.0 Td (Reg. Oficial: 2026 | Ecuador) Tj ET
-BT /F2 8.5 Tf 0.850 0.100 0.100 rg 40.0 447.0 Td (Instituto Superior Tecnológico Guayaquil) Tj ET
-BT /F1 8.5 Tf 0.350 0.350 0.350 rg 260.0 447.0 Td (| Registro SNIESE / MINEDEC: 2116-2026-3398511 \(17/06/2026\)) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 40.0 434.0 Td (Título oficial de tercer nivel técnico-tecnológico superior en el área de Tecnologías de la Información y Comunicación \(TIC\).) Tj ET
-BT /F2 10 Tf 0.100 0.100 0.100 rg 40.0 418.0 Td (Aprendizaje Continuo y Especialización Práctica) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 405.0 Td (- Integración de Modelos de Inteligencia Artificial locales \(Ollama, Qwen\) y procesamiento con Python.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 393.5 Td (- Patrones de arquitectura limpia, SOLID, desarrollo guiado por pruebas \(TDD\) y seguridad web moderna.) Tj ET
-BT /F1 8.5 Tf 0.300 0.300 0.300 rg 48.0 382.0 Td (- Redes, infraestructura Linux, contenedorización con Docker y DevOps asistido por IA.) Tj ET
-BT /F2 11 Tf 0.100 0.100 0.100 rg 40.0 362.5 Td (6. IDIOMAS Y DISPONIBILIDAD) Tj ET
-0.800 0.800 0.800 RG 0.8 w 40.0 358.5 m 555.0 358.5 l S
-BT /F1 8.5 Tf 0.250 0.250 0.250 rg 40.0 346.5 Td (Español: Nativo | Inglés: Técnico \(lectura y comprensión fluida de documentación, librerías y especificaciones\).) Tj ET
-BT /F1 8.5 Tf 0.250 0.250 0.250 rg 40.0 334.5 Td (Disponibilidad: Proyectos remotos, desarrollo a medida, consultoría y soporte especializado a tiempo completo o parcial.) Tj ET
-BT /F1 8 Tf 0.600 0.600 0.600 rg 40.0 25.0 Td (René Mejillón | Currículum Vitae Profesional | Página 2 de 2) Tj ET
-
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F1 8 Tf 9.6 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 42 25 Tm (Ren\351 Mejill\363n | renemejillon@alphaecuador.com) Tj T* ET
+BT 1 0 0 1 548.8276 25 Tm (1) Tj T* ET
+q
+1 0 0 1 48 777.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL (Ren\351 David Mejill\363n Torres) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 755.8898 cm
+q
+.619608 .145098 .145098 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (Desarrollador Full Stack | PHP, Laravel, JavaScript y React) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 737.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Guayaquil, Ecuador | renemejillon@alphaecuador.com | +593 981817493) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 719.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (linkedin.com/in/renemejillon | github.com/rmsolutionstec) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 701.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://rene-mejillon-dev.vercel.app/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 674.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (PERFIL PROFESIONAL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 627.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 32 Tm /F1 10 Tf 14 TL (Soy Tecn\363logo Superior en Desarrollo de Software y desarrollador full stack con experiencia pr\341ctica en PHP,) Tj T* (Laravel, JavaScript/JSX, React y MySQL. Trabajo con Laravel y React desde 2023, con una trayectoria previa) Tj T* (en soporte inform\341tico, redes e infraestructura TI iniciada en 2008.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 593.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 18 Tm /F1 10 Tf 14 TL (Desarrollo individual de Academia Luz al Mundo y del portal institucional de Fundaci\363n Cl\355nica del Alma.) Tj T* (Modelado de datos, formularios responsive, validaci\363n, permisos, reportes y mantenimiento.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 566.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (COMPETENCIAS T\311CNICAS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 533.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 18 Tm /F1 10 Tf 14 TL (Experiencia pr\341ctica: PHP, Laravel, JavaScript/JSX, React, Inertia.js, MySQL, Eloquent, SQL, HTML/CSS,) Tj T* (Tailwind CSS, Git/GitHub y despliegues por Git/SSH.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 499.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 18 Tm /F1 10 Tf 14 TL (Servicios TI: mantenimiento y ensamblaje, diagn\363stico de hardware/software, sistemas operativos, redes) Tj T* (LAN/Wi-Fi y CCTV. Automatizaci\363n: flujos n8n con validaci\363n, estados y recuperaci\363n de errores.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 479.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (Experiencia acad\351mica: Python y Django. Aprendizaje aplicado: APIs REST, webhooks, Linux y Docker.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 452.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (EXPERIENCIA PROFESIONAL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 432.8898 cm
+q
+.619608 .145098 .145098 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (Alpha Publicidad, Soporte y Desarrollo | Responsable de Soluciones TI y Desarrollo Web) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 414.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Agosto 2023 - actualidad | Actividad independiente) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 380.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 18 Tm /F1 10 Tf 14 TL (Continuidad de mi actividad independiente bajo una nueva marca. Trabajo con Laravel y React desde 2023,) Tj T* (adem\341s de soporte inform\341tico y flujos de automatizaci\363n con n8n.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 360.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Desarrollo individual de Academia Luz al Mundo y del portal de Fundaci\363n Cl\355nica del Alma.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 340.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Mantenimiento, despliegues Git/SSH y atenci\363n directa a clientes.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 319.8898 cm
+q
+.619608 .145098 .145098 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (RM Solutions Tec | T\351cnico de soporte inform\341tico y redes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 301.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Mayo 2008 - julio 2023 | Actividad independiente) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 253.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 32 Tm /F1 10 Tf 14 TL (Servicios de mantenimiento, ensamblaje y diagn\363stico de equipos; instalaci\363n de sistemas, redes LAN/Wi-Fi,) Tj T* (c\341maras e infraestructura tecnol\363gica. La actividad contin\372a desde agosto de 2023 bajo Alpha. REMETECS es) Tj T* (mi seud\363nimo profesional.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 233.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Atenci\363n directa y asesor\355a t\351cnica para clientes y organizaciones.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 203.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Alcance aproximado acumulado de la trayectoria TI desde 2008: m\341s de 50 clientes, unas 20 instalaciones de c\341maras y) Tj T* (unas 10 de redes. No son cifras anuales ni exclusivas de Alpha.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+10 0 obj
+<<
+/Length 5038
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F1 8 Tf 9.6 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 42 25 Tm (Ren\351 Mejill\363n | renemejillon@alphaecuador.com) Tj T* ET
+BT 1 0 0 1 548.8276 25 Tm (2) Tj T* ET
+q
+1 0 0 1 48 786.8898 cm
+q
+.619608 .145098 .145098 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (Ren\351 David Mejill\363n Torres | Proyectos y formaci\363n) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 759.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (PROYECTOS DESTACADOS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 739.8898 cm
+q
+.619608 .145098 .145098 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (Academia Luz al Mundo) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 721.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Enero 2025 - actualidad | Desarrollo individual, mantenimiento y preparaci\363n de despliegues.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 673.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 32 Tm /F1 10 Tf 14 TL (Desarrollo individual de una aplicaci\363n Laravel con React integrado mediante Inertia.js y un sitio p\372blico) Tj T* (institucional. Integra gesti\363n acad\351mica, administrativa y financiera para administraci\363n, secretar\355a, docentes,) Tj T* (estudiantes y representantes. Sistema en uso y evoluci\363n continua.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 653.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Modelado Eloquent/SQL, migraciones e integridad de datos.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 633.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Inscripciones, clases, horarios, asistencias, evaluaciones y calificaciones.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 613.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Cargos, pagos, abonos, saldos y cierre de caja; transacciones e idempotencia.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 595.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Tecnolog\355as: PHP 8.3, Laravel 12, JavaScript / JSX, React 19, Inertia.js 2, Tailwind CSS 3.4, MySQL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 577.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://academialuzalmundo.com/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 556.8898 cm
+q
+.619608 .145098 .145098 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (Fundaci\363n Cl\355nica del Alma) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 538.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Julio - diciembre 2025 | Desarrollo individual, contenido y soporte t\351cnico.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 504.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 18 Tm /F1 10 Tf 14 TL (Desarrollo individual del portal institucional de Fundaci\363n Cl\355nica del Alma. Mi participaci\363n comprende) Tj T* (desarrollo, contenido y soporte t\351cnico. El sitio presenta programas, ministerios, galer\355a, contacto y donaciones.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 484.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Informaci\363n institucional y difusi\363n de programas y ministerios.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 464.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (- Galer\355a, contacto y secci\363n de donaciones.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 446.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://fundacionclinicadelalma.org/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 416.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Portafolio personal \(desde 2026\): React/Vite en Vercel; API Laravel y panel administrativo implementados en el repositorio.) Tj T* (Proyectos complementarios consultables en GitHub.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 389.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (OTROS ANTECEDENTES) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 372.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Iglesia Cuadrangular Central | Dise\361ador Multimedia y Productor T\351cnico | 2016 - 2018) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 354.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Guimun | Vendedor de servicios intangibles | Octubre 2014 - mayo 2015) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 336.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (COVERSA | Ventas de servicios intangibles | Diciembre 2013 - agosto 2014) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 318.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Comercial Andres | T\351cnico inform\341tico | Septiembre 2012 - diciembre 2013) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 291.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (EDUCACI\323N) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 272.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F1 10 Tf 14 TL (Tecn\363logo Superior en Desarrollo de Software | Instituto Superior Tecnol\363gico Guayaquil) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 254.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Estudios: Diciembre 2022 - junio 2025. Registro del t\355tulo: 17 de junio de 2026.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 224.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Desarrollador Back-end | Capac\355tate para el empleo. Finalizado el 24 de febrero de 2025; 106 horas, calificaci\363n 8,25. Sin) Tj T* (vencimiento acreditado.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 197.8898 cm
+q
+.094118 .172549 .227451 rg
+BT 1 0 0 1 0 4 Tm /F2 11 Tf 15 TL (IDIOMAS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 48 180.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Espa\361ol. Ingl\351s b\341sico, sin nivel certificado.) Tj T* ET
+Q
+Q
+ 
 endstream
 endobj
 xref
-0 9
+0 11
 0000000000 65535 f 
-0000000015 00000 n 
-0000000064 00000 n 
-0000000127 00000 n 
-0000000224 00000 n 
-0000000326 00000 n 
-0000000462 00000 n 
-0000006051 00000 n 
-0000006187 00000 n 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000524 00000 n 
+0000000728 00000 n 
+0000000796 00000 n 
+0000001130 00000 n 
+0000001195 00000 n 
+0000006030 00000 n 
 trailer
 <<
-/Size 9
-/Root 1 0 R
+/ID 
+[<afefa8f0090af50016b3ef78f0f11fb1><afefa8f0090af50016b3ef78f0f11fb1>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 7 0 R
+/Root 6 0 R
+/Size 11
 >>
 startxref
-12232
+11120
 %%EOF

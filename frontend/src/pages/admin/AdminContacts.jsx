@@ -1,33 +1,16 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import {
-  FaEnvelope, FaTrash, FaTimes, FaCheckCircle, FaClock, FaEye,
+  FaEnvelope, FaTrash, FaCheckCircle, FaClock, FaEye,
 } from 'react-icons/fa'
+import Modal from '../../components/ui/Modal'
 import { adminApi } from '../../services/api'
 
 function ContactModal({ contact, onClose }) {
   if (!contact) return null
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(6px)' }}
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
-          className="w-full max-w-lg rounded-2xl overflow-hidden"
-          style={{ background: '#161616', border: '1px solid rgba(255,30,30,0.2)', boxShadow: '0 25px 80px rgba(0,0,0,0.9)' }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="flex items-center justify-between p-5 border-b" style={{ borderColor: 'rgba(42,42,42,0.8)' }}>
-            <h2 className="font-display font-bold text-base text-white-text">Mensaje de contacto</h2>
-            <button onClick={onClose} className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-text hover:text-white-text" style={{ background: 'rgba(31,31,31,0.8)' }}>
-              <FaTimes size={14} />
-            </button>
-          </div>
+    <Modal open={!!contact} onClose={onClose} title="Mensaje de contacto">
           <div className="p-6 space-y-5">
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -63,16 +46,14 @@ function ContactModal({ contact, onClose }) {
               </div>
             </div>
             <div className="flex gap-3">
-              <a href={`mailto:${contact.email}?subject=Re: ${contact.subject || 'Tu mensaje'}`}
+              <a href={'mailto:' + contact.email + '?subject=' + encodeURIComponent('Re: ' + (contact.subject || 'Tu mensaje'))}
                 className="btn-primary gap-2 text-sm flex-1 justify-center">
                 <FaEnvelope size={13} /> Responder
               </a>
               <button onClick={onClose} className="btn-ghost px-5">Cerrar</button>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+    </Modal>
   )
 }
 
@@ -102,7 +83,7 @@ export default function AdminContacts() {
       try {
         await adminApi.markRead(contact.id)
         setContacts((prev) => prev.map((c) => c.id === contact.id ? { ...c, read_at: new Date().toISOString() } : c))
-      } catch {}
+      } catch { toast.error('No se pudo marcar el mensaje como leído') }
     }
   }
 
@@ -220,7 +201,7 @@ export default function AdminContacts() {
                           style={{ background: 'rgba(31,31,31,0.8)' }}>
                           <FaEye size={13} />
                         </button>
-                        <button onClick={(e) => handleDelete(c.id, e)}
+                        <button aria-label="Eliminar mensaje" onClick={(e) => handleDelete(c.id, e)}
                           className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-dim hover:text-red-main transition-colors"
                           style={{ background: 'rgba(31,31,31,0.8)' }}>
                           <FaTrash size={12} />

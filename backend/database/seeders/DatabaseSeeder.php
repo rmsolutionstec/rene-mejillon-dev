@@ -10,19 +10,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Admin user — change email and password before deploying
-        User::firstOrCreate(
-            ['email' => env('ADMIN_EMAIL', 'admin@renemejillon.dev')],
-            [
-                'name'     => 'René Mejillón',
-                'password' => Hash::make(env('ADMIN_PASSWORD', 'changeme_before_deploy')),
-            ]
-        );
-
-        $this->call([
-            ProjectSeeder::class,
-            SkillSeeder::class,
-            ServiceSeeder::class,
-        ]);
+        $email = config('portfolio.admin_email');
+        $password = config('portfolio.admin_password');
+        if (! $email || ! filter_var($email, FILTER_VALIDATE_EMAIL) || ! is_string($password) || strlen($password) < 12) {
+            throw new \RuntimeException('Configura ADMIN_EMAIL y ADMIN_PASSWORD (mínimo 12 caracteres) antes de ejecutar el seeder.');
+        }
+        User::firstOrCreate(['email' => $email], ['name' => 'René Mejillón', 'password' => Hash::make($password)]);
+        $this->call([ProjectSeeder::class, SkillSeeder::class, ServiceSeeder::class]);
     }
 }

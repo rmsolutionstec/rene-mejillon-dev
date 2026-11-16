@@ -1,0 +1,531 @@
+{
+  "personalInfo": {
+    "name": "René Mejillón",
+    "fullName": "René David Mejillón Torres",
+    "firstName": "René",
+    "lastName": "Mejillón",
+    "title": "Desarrollador Full Stack",
+    "subtitle": "PHP, Laravel, JavaScript y React | MySQL e Inertia.js",
+    "bio": "Soy Tecnólogo Superior en Desarrollo de Software y desarrollador full stack con experiencia práctica en PHP, Laravel, JavaScript/JSX, React y MySQL. Trabajo con Laravel y React desde 2023, con una trayectoria previa en soporte informático, redes e infraestructura TI iniciada en 2008.",
+    "bioLong": "Desarrollé individualmente la plataforma de Academia Luz al Mundo y el portal institucional de Fundación Clínica del Alma. Desde agosto de 2023 continúo mi actividad independiente bajo Alpha Publicidad, Soporte y Desarrollo, anteriormente RM Solutions Tec. Combino desarrollo, mantenimiento y atención directa a clientes, y sigo aprendiendo mediante proyectos aplicados.",
+    "location": "Guayaquil, Ecuador",
+    "email": "renemejillon@alphaecuador.com",
+    "servicesEmail": "contacto@alphaecuador.com",
+    "phone": "+593 981817493",
+    "website": "https://rene-mejillon-dev.vercel.app/",
+    "cvUrl": "/cv/rene-mejillon-cv.pdf",
+    "available": true
+  },
+  "education": {
+    "degree": "Tecnólogo Superior en Desarrollo de Software",
+    "institution": "Instituto Superior Tecnológico Guayaquil",
+    "period": "Diciembre 2022 - junio 2025",
+    "registered": "17 de junio de 2026"
+  },
+  "skills": [
+    {
+      "name": "Laravel",
+      "category": "backend",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-laravel"
+    },
+    {
+      "name": "React.js",
+      "category": "frontend",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-react-js"
+    },
+    {
+      "name": "PHP",
+      "category": "backend",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-php"
+    },
+    {
+      "name": "JavaScript / JSX",
+      "category": "frontend",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-javascript-jsx"
+    },
+    {
+      "name": "MySQL / MariaDB",
+      "category": "database",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-mysql-mariadb"
+    },
+    {
+      "name": "Inertia.js",
+      "category": "frontend",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-inertia-js"
+    },
+    {
+      "name": "HTML, CSS y Tailwind CSS",
+      "category": "frontend",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-html-css-y-tailwind-css"
+    },
+    {
+      "name": "Eloquent y SQL",
+      "category": "database",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-eloquent-y-sql"
+    },
+    {
+      "name": "Git / GitHub y despliegues Git/SSH",
+      "category": "devops",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-git-github-y-despliegues-git-ssh"
+    },
+    {
+      "name": "Soporte informático, redes LAN/Wi-Fi y CCTV",
+      "category": "devops",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-soporte-inform-tico-redes-lan-wi-fi-y-cctv"
+    },
+    {
+      "name": "Flujos de automatización con n8n",
+      "category": "backend",
+      "experience": "practice",
+      "is_published": true,
+      "catalog_key": "skill-flujos-de-automatizaci-n-con-n8n"
+    },
+    {
+      "name": "Python",
+      "category": "backend",
+      "experience": "academic",
+      "is_published": true,
+      "catalog_key": "skill-python"
+    },
+    {
+      "name": "Django",
+      "category": "backend",
+      "experience": "academic",
+      "is_published": true,
+      "catalog_key": "skill-django"
+    },
+    {
+      "name": "APIs REST y webhooks",
+      "category": "backend",
+      "experience": "learning",
+      "is_published": true,
+      "catalog_key": "skill-apis-rest-y-webhooks"
+    },
+    {
+      "name": "Linux",
+      "category": "devops",
+      "experience": "learning",
+      "is_published": true,
+      "catalog_key": "skill-linux"
+    },
+    {
+      "name": "Docker",
+      "category": "devops",
+      "experience": "learning",
+      "is_published": true,
+      "catalog_key": "skill-docker"
+    }
+  ],
+  "projects": [
+    {
+      "catalog_key": "academia",
+      "title": "Academia Luz al Mundo",
+      "short_desc": "Plataforma de gestión académica y financiera para una academia de danza.",
+      "description": "Desarrollo individual de una aplicación Laravel con React integrado mediante Inertia.js y un sitio público institucional. Integra gestión académica, administrativa y financiera para administración, secretaría, docentes, estudiantes y representantes. Sistema en uso y evolución continua.",
+      "category": "Web App",
+      "status": "En uso y evolución",
+      "tech": [
+        "PHP 8.3",
+        "Laravel 12",
+        "JavaScript / JSX",
+        "React 19",
+        "Inertia.js 2",
+        "Tailwind CSS 3.4",
+        "MySQL"
+      ],
+      "live_url": "https://academialuzalmundo.com/",
+      "github_url": null,
+      "year": 2025,
+      "period": "Enero 2025 - actualidad",
+      "participation": "Desarrollo individual, mantenimiento y preparación de despliegues.",
+      "featured": true,
+      "display_order": 0,
+      "image": null,
+      "achievements": [
+        "Modelado Eloquent/SQL, migraciones e integridad de datos.",
+        "Inscripciones, clases, horarios, asistencias, evaluaciones y calificaciones.",
+        "Cargos, pagos, abonos, saldos y cierre de caja; transacciones e idempotencia.",
+        "Form Requests, Policies, roles, reportes PDF/CSV y tareas programadas.",
+        "Despliegues Git/SSH en hosting compartido; mantenimiento continuo."
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "fundacion",
+      "title": "Fundación Clínica del Alma",
+      "short_desc": "Portal institucional: programas, ministerios, galería, contacto y donaciones.",
+      "description": "Desarrollo individual del portal institucional de Fundación Clínica del Alma. Mi participación comprende desarrollo, contenido y soporte técnico. El sitio presenta programas, ministerios, galería, contacto y donaciones.",
+      "category": "Web App",
+      "status": "Publicado",
+      "tech": [],
+      "live_url": "https://fundacionclinicadelalma.org/",
+      "github_url": null,
+      "year": 2025,
+      "period": "Julio - diciembre 2025",
+      "participation": "Desarrollo individual, contenido y soporte técnico.",
+      "featured": true,
+      "display_order": 1,
+      "image": null,
+      "achievements": [
+        "Información institucional y difusión de programas y ministerios.",
+        "Galería, contacto y sección de donaciones."
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "portafolio",
+      "title": "Portafolio René Mejillón",
+      "short_desc": "Portafolio React/Vite con API Laravel y panel administrativo.",
+      "description": "SPA en React 18 y Vite, publicada en Vercel. El repositorio implementa una API Laravel 12 con Sanctum para contacto y administración. El contenido inicial se sirve desde un catálogo compartido y se actualiza desde la API cuando está disponible.",
+      "category": "Web App",
+      "status": "En evolución",
+      "tech": [
+        "React 18",
+        "Vite",
+        "Tailwind CSS",
+        "Laravel 12",
+        "Sanctum"
+      ],
+      "live_url": "https://rene-mejillon-dev.vercel.app/",
+      "github_url": "https://github.com/rmsolutionstec/rene-mejillon-dev",
+      "year": 2026,
+      "period": "Desde 2026",
+      "participation": "Desarrollo y mantenimiento del portafolio personal.",
+      "featured": true,
+      "display_order": 2,
+      "image": null,
+      "achievements": [
+        "Contenido inicial estático con actualización por API y fallback ante fallos.",
+        "Panel administrativo y formulario de contacto.",
+        "Validaciones de contenido, pruebas y descarga del CV."
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "alpha",
+      "title": "Alpha Ecuador",
+      "short_desc": "Sitio corporativo y catálogo de servicios tecnológicos.",
+      "description": "Proyecto corporativo de Alpha Publicidad, Soporte y Desarrollo para presentar servicios TI y desarrollo web. Las nuevas funciones se incorporan según su alcance confirmado.",
+      "category": "Web App",
+      "status": "En desarrollo",
+      "tech": [],
+      "live_url": "https://alphaecuador.com/",
+      "github_url": null,
+      "year": 2026,
+      "period": "En desarrollo",
+      "participation": "Proyecto de mi actividad independiente.",
+      "featured": false,
+      "display_order": 3,
+      "image": null,
+      "achievements": [
+        "Presentación de servicios y contacto de Alpha."
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "tts",
+      "title": "Alpha Studio TTS Latino",
+      "short_desc": "Proyecto complementario de escritorio: texto a voz y procesamiento de audio.",
+      "description": "Proyecto personal en Python/PySide6 con Edge TTS y FFmpeg para explorar herramientas de texto a voz, audio y subtítulos. Se presenta como aprendizaje aplicado en un repositorio público.",
+      "category": "Software Desktop",
+      "status": "Proyecto personal",
+      "tech": [
+        "Python",
+        "PySide6",
+        "Edge TTS",
+        "FFmpeg"
+      ],
+      "live_url": null,
+      "github_url": "https://github.com/rmsolutionstec/alpha-ecuador-tts",
+      "year": 2026,
+      "period": "Proyecto complementario",
+      "participation": "Desarrollo y aprendizaje aplicado.",
+      "featured": false,
+      "display_order": 4,
+      "image": null,
+      "achievements": [
+        "Interfaz de escritorio y exploración de síntesis de voz.",
+        "Procesamiento de audio y subtítulos; alcance actual consultable en el repositorio."
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "studio",
+      "title": "Alpha Studio — Producción con IA",
+      "short_desc": "Exploración de flujos de producción y publicación de contenido.",
+      "description": "Proyecto en desarrollo para integrar flujos de contenido con n8n y herramientas de procesamiento local. Los componentes de IA y multimedia permanecen como experimentación e integración progresiva.",
+      "category": "Automatización",
+      "status": "En desarrollo",
+      "tech": [
+        "n8n"
+      ],
+      "live_url": null,
+      "github_url": null,
+      "year": 2026,
+      "period": "En desarrollo",
+      "participation": "Diseño de flujos y aprendizaje aplicado.",
+      "featured": false,
+      "display_order": 5,
+      "image": null,
+      "achievements": [
+        "Validaciones, seguimiento de estados y recuperación de errores en flujos."
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "server",
+      "title": "AlphaServer",
+      "short_desc": "Entorno propio de aprendizaje de Linux, Docker y servicios privados.",
+      "description": "Proyecto propio de uso personal para continuar aprendiendo Linux, Docker y operación de servicios privados.",
+      "category": "Infraestructura",
+      "status": "Uso propio",
+      "tech": [
+        "Linux",
+        "Docker"
+      ],
+      "live_url": null,
+      "github_url": null,
+      "year": 2025,
+      "period": "Proyecto complementario",
+      "participation": "Configuración y aprendizaje aplicado.",
+      "featured": false,
+      "display_order": 6,
+      "image": null,
+      "achievements": [
+        "Exploración de servicios locales y mantenimiento de un entorno propio."
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "aniversario",
+      "title": "Aniversario",
+      "short_desc": "Experiencia interactiva multimedia de frontend.",
+      "description": "Proyecto complementario de una experiencia web interactiva con contenido multimedia. Se conserva como parte del inventario de trabajo frontend.",
+      "category": "Frontend",
+      "status": "Completado",
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "live_url": null,
+      "github_url": null,
+      "year": 2024,
+      "period": "Proyecto complementario",
+      "participation": "Desarrollo frontend.",
+      "featured": false,
+      "display_order": 7,
+      "image": null,
+      "achievements": [
+        "Interacción y presentación de contenido multimedia."
+      ],
+      "is_published": true
+    }
+  ],
+  "services": [
+    {
+      "catalog_key": "web",
+      "title": "Desarrollo web con Laravel y React",
+      "description": "Aplicaciones, portales institucionales y paneles de gestión, con alcance definido según las necesidades del proyecto.",
+      "icon": "FaCode",
+      "price": null,
+      "popular": true,
+      "features": [
+        "Modelado de datos con MySQL y Eloquent",
+        "Componentes y formularios responsive",
+        "Usuarios, permisos y reportes"
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "maintenance",
+      "title": "Mantenimiento y soporte de aplicaciones",
+      "description": "Actualización de funcionalidades, revisión de incidencias y preparación de despliegues.",
+      "icon": "FaCogs",
+      "price": null,
+      "popular": false,
+      "features": [
+        "Control de versiones con Git/GitHub",
+        "Despliegues por Git/SSH en hosting",
+        "Mantenimiento de contenido y formularios"
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "support",
+      "title": "Soporte informático y redes",
+      "description": "Diagnóstico, mantenimiento y asesoría técnica, con trayectoria en servicios TI desde 2008.",
+      "icon": "FaDesktop",
+      "price": null,
+      "popular": false,
+      "features": [
+        "Mantenimiento preventivo y correctivo",
+        "Ensamblaje y configuración de equipos",
+        "Redes LAN/Wi-Fi y soporte CCTV"
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "automation",
+      "title": "Flujos de automatización con n8n",
+      "description": "Flujos de gestión y publicación de contenido, con validaciones y seguimiento de estados. Cada integración se evalúa según su alcance.",
+      "icon": "FaCogs",
+      "price": null,
+      "popular": false,
+      "features": [
+        "Validación de datos antes de ejecutar",
+        "Seguimiento de estados",
+        "Recuperación de errores"
+      ],
+      "is_published": true
+    },
+    {
+      "catalog_key": "media",
+      "title": "Servicios multimedia complementarios",
+      "description": "Diseño gráfico, edición multimedia y producción técnica como complemento de los servicios de desarrollo y TI.",
+      "icon": "FaDesktop",
+      "price": null,
+      "popular": false,
+      "features": [
+        "Piezas gráficas y publicitarias",
+        "Edición y producción audiovisual",
+        "Apoyo técnico en transmisiones en vivo"
+      ],
+      "is_published": true
+    }
+  ],
+  "experience": [
+    {
+      "id": "alpha",
+      "company": "Alpha Publicidad, Soporte y Desarrollo",
+      "role": "Responsable de Soluciones TI y Desarrollo Web",
+      "period": "Agosto 2023 - actualidad",
+      "current": true,
+      "type": "Actividad independiente",
+      "location": "Guayaquil, Ecuador",
+      "description": "Continuidad de mi actividad independiente bajo una nueva marca. Trabajo con Laravel y React desde 2023, además de soporte informático y flujos de automatización con n8n.",
+      "tech": [
+        "Laravel",
+        "React",
+        "PHP",
+        "JavaScript",
+        "MySQL",
+        "Git/GitHub"
+      ],
+      "achievements": [
+        "Desarrollo individual de Academia Luz al Mundo y del portal de Fundación Clínica del Alma.",
+        "Mantenimiento, despliegues Git/SSH y atención directa a clientes."
+      ]
+    },
+    {
+      "id": "foundation-media",
+      "company": "Fundación Clínica del Alma",
+      "role": "Colaboración técnica y multimedia",
+      "period": "2024 - actualidad",
+      "current": true,
+      "type": "Colaboración (antecedente del portafolio)",
+      "location": "Guayaquil, Ecuador",
+      "description": "Soporte del portal y apoyo técnico a contenido y transmisiones. Este vínculo es distinto del proyecto de desarrollo institucional realizado entre julio y diciembre de 2025.",
+      "tech": [
+        "vMix",
+        "OBS Studio"
+      ],
+      "achievements": []
+    },
+    {
+      "id": "rm",
+      "company": "RM Solutions Tec",
+      "role": "Técnico de soporte informático y redes",
+      "period": "Mayo 2008 - julio 2023",
+      "current": false,
+      "type": "Actividad independiente",
+      "location": "Guayaquil, Ecuador",
+      "description": "Servicios de mantenimiento, ensamblaje y diagnóstico de equipos; instalación de sistemas, redes LAN/Wi-Fi, cámaras e infraestructura tecnológica. La actividad continúa desde agosto de 2023 bajo Alpha. REMETECS es mi seudónimo profesional.",
+      "tech": [
+        "Soporte TI",
+        "Hardware",
+        "Redes LAN/Wi-Fi",
+        "CCTV"
+      ],
+      "achievements": [
+        "Atención directa y asesoría técnica para clientes y organizaciones."
+      ]
+    },
+    {
+      "id": "church",
+      "company": "Iglesia Cuadrangular Central",
+      "role": "Diseñador Multimedia y Productor Técnico",
+      "period": "2016 - 2018",
+      "current": false,
+      "type": "Antecedente profesional",
+      "location": "Guayaquil, Ecuador",
+      "description": "Producción técnica audiovisual, transmisiones y soporte informático en eventos institucionales.",
+      "tech": [
+        "vMix",
+        "OBS Studio",
+        "Photoshop"
+      ],
+      "achievements": [
+        "Operación de transmisiones y material multimedia."
+      ]
+    },
+    {
+      "id": "guimun",
+      "company": "Guimun",
+      "role": "Vendedor de servicios intangibles",
+      "period": "Octubre 2014 - mayo 2015",
+      "current": false,
+      "type": "Antecedente comercial",
+      "location": "Ecuador",
+      "description": "Comercialización de servicios, atención personalizada, asesoría y telemarketing.",
+      "tech": [],
+      "achievements": []
+    },
+    {
+      "id": "coversa",
+      "company": "COVERSA",
+      "role": "Ventas de servicios intangibles",
+      "period": "Diciembre 2013 - agosto 2014",
+      "current": false,
+      "type": "Antecedente comercial",
+      "location": "Ecuador",
+      "description": "Venta y asesoría de seguros; atención telefónica y telemarketing.",
+      "tech": [],
+      "achievements": []
+    },
+    {
+      "id": "andres",
+      "company": "Comercial Andres",
+      "role": "Técnico informático",
+      "period": "Septiembre 2012 - diciembre 2013",
+      "current": false,
+      "type": "Antecedente profesional",
+      "location": "Guayaquil, Ecuador",
+      "description": "Atención y asesoría técnica sobre equipos, soporte informático y venta de productos tecnológicos.",
+      "tech": [
+        "Soporte informático"
+      ],
+      "achievements": []
+    }
+  ]
+}

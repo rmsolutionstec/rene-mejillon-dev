@@ -48,3 +48,10 @@ Thumbs.db
 
 # ─── Vite / Node ──────────────────────────────────────────────
 .vite/
+
+# Local QA artifacts
+output/
+tmp/
+.playwright/
+.playwright-cli/
+scratch/npm-audit.json

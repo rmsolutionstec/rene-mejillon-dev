@@ -1,53 +1,24 @@
-# QA-CHECKLIST.md — Protocolo de Aseguramiento de Calidad y Pruebas
+# QA local — 15/11/2026
 
-Este checklist debe ejecutarse y documentarse antes de considerar cualquier versión lista para release.
+Ver IMPLEMENTATION-REPORT.md para resultados, evidencias y límites.
 
----
+- [x] Contenido y orden de proyectos alineados con la matriz vigente de LinkedIn.
+- [x] Sin porcentajes de habilidad, satisfacción inventada, precios no confirmados ni testimonios sin evidencia publicados.
+- [x] Catálogo compartido con claves estables; repetición de seeders conserva ediciones.
+- [x] Lint, build, validación de catálogo/CV y Pint.
+- [x] 17 pruebas / 95 aserciones de API correctas en SQLite en memoria.
+- [x] Autenticación, publicación, CRUD, sanitización, expiración, logout, throttle y sincronización.
+- [x] Tablas de caché y límites con almacenamiento database comprobados.
+- [x] Chromium a 360/768/1440 px: sin desbordamiento horizontal.
+- [x] Menú móvil, filtros, diálogo, Escape y restauración del foco.
+- [x] Contacto y login contra una base exclusiva de demostración.
+- [x] Creación/edición desde admin visible públicamente; eliminación de muestra sintética.
+- [x] Fallback ante API fallida y respeto a una colección vacía compatible.
+- [x] CV renderizado, texto seleccionable y descarga con bytes idénticos.
+- [x] npm audit y composer audit sin alertas reportadas.
+- [ ] Ejecución remota de CI/PostgreSQL.
+- [ ] Revisión editorial del propietario.
+- [ ] Verificación de headers y servicios desplegados.
+- [ ] Revisión ampliada con tecnologías de asistencia y medición formal de Core Web Vitals, si se requiere una evaluación completa.
 
-## 1. Verificación de Enlaces y Descargas
-
-- [ ] **Descarga de CV en Hero:** Al hacer clic, descarga un PDF binario válido con nombre `Rene_Mejillon_CV_2026.pdf`.
-- [ ] **Descarga de CV en About:** Descarga el archivo correctamente.
-- [ ] **Descarga de CV en Navbar (Desktop y Móvil):** Descarga el archivo correctamente.
-- [ ] **Descarga de CV en Footer:** Descarga el archivo correctamente.
-- [ ] **Integridad del PDF:** El archivo descargado puede abrirse en Adobe Reader, Chrome y visores móviles sin errores de corrupción.
-- [ ] **Selección de texto:** El texto dentro del PDF puede seleccionarse y copiarse.
-- [ ] **Enlaces externos:** GitHub, LinkedIn y WhatsApp abren en nueva pestaña con `rel="noopener noreferrer"`.
-- [ ] **Rutas del sitio:** Enrutamiento SPA no lanza errores en consola al navegar a `/admin/login` o recargar cualquier ruta.
-
----
-
-## 2. Pruebas de Interfaz y Responsive
-
-- [ ] **Móvil (360px - 480px):**
-  - El menú hamburguesa abre y cierra correctamente.
-  - El texto del Hero no se corta ni desborda horizontalmente.
-  - Los modales de proyectos se ajustan al ancho de pantalla.
-- [ ] **Tablet (768px - 1024px):**
-  - La cuadrícula de proyectos y habilidades muestra 2 columnas ordenadas.
-  - Los espaciados son proporcionales.
-- [ ] **Escritorio (1280px - 1920px):**
-  - Cuadrícula de 3 columnas para proyectos.
-  - Navbar fijo con cambio de fondo al hacer scroll.
-- [ ] **Animaciones:** Se deshabilitan o suavizan cuando el sistema activa `prefers-reduced-motion`.
-
----
-
-## 3. Pruebas de Formulario y API
-
-- [ ] **Formulario de Contacto:**
-  - Validación de campos requeridos (nombre, email, mensaje).
-  - Al enviar un mensaje con datos correctos, muestra toast de éxito.
-  - Rate limiting: Al enviar más de 3 mensajes en una hora, la API responde con HTTP 429 Too Many Requests y un mensaje claro.
-- [ ] **Panel Admin (`/admin/login`):**
-  - Rate limiting: Al fallar 5 intentos seguidos en un minuto, la API bloquea temporalmente.
-  - Acceso con credenciales correctas emite token y permite navegación a dashboard.
-
----
-
-## 4. Pruebas de Construcción y Rendimiento
-
-- [ ] **Build limpio:** `npm run build` en `frontend/` finaliza con código de salida 0.
-- [ ] **Sin warnings críticos de empaquetado:** `dist/` contiene assets con hash y carpeta `cv/` con el PDF.
-- [ ] **Linter PHP:** `php -l` en todos los archivos de backend pasa sin errores sintácticos.
-- [ ] **Linter JS:** `npm run lint` en `frontend/` no muestra errores bloqueantes.
+Las casillas locales no sustituyen las verificaciones posteriores a un despliegue autorizado.

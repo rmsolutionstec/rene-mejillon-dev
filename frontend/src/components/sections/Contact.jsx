@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import toast from 'react-hot-toast'
 import {
-  FaEnvelope, FaWhatsapp, FaGithub, FaLinkedin, FaTwitter,
+  FaEnvelope, FaWhatsapp, FaGithub, FaLinkedin,
   FaMapMarkerAlt, FaPaperPlane, FaCheckCircle,
 } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
@@ -11,7 +11,8 @@ import { personalInfo } from '../../data/portfolioData'
 import { publicApi } from '../../services/api'
 
 const CONTACT_INFO = [
-  { Icon: FaEnvelope,      label: 'Email',    value: personalInfo.email,  href: `mailto:${personalInfo.email}` },
+  { Icon: FaEnvelope,      label: 'Contacto profesional',    value: personalInfo.email,  href: `mailto:${personalInfo.email}` },
+  { Icon: FaEnvelope, label: 'Servicios Alpha', value: personalInfo.servicesEmail, href: 'mailto:' + personalInfo.servicesEmail },
   { Icon: FaWhatsapp,      label: 'WhatsApp', value: personalInfo.phone,  href: 'https://wa.me/593981817493'   },
   { Icon: FaMapMarkerAlt,  label: 'Ubicación',value: personalInfo.location, href: null                         },
 ]
@@ -24,8 +25,9 @@ const SOCIALS = [
 
 const SERVICES_OPTIONS = [
   'Desarrollo Web Full Stack',
-  'API REST',
-  'Ecommerce',
+  'Mantenimiento de aplicaciones',
+  'Soporte informático y redes',
+  'Automatización con n8n',
   'Consultoría técnica',
   'Otro',
 ]
@@ -69,8 +71,9 @@ export default function Contact() {
       setSent(true)
       setForm(INITIAL)
       toast.success('¡Mensaje enviado! Te responderé pronto.', { duration: 5000 })
-    } catch {
-      toast.error('No se pudo enviar. Intenta por WhatsApp.')
+    } catch (error) {
+      if (error.response?.status === 422) setErrors(Object.fromEntries(Object.entries(error.response.data.errors || {}).map(([key, values]) => [key, values[0]])))
+      toast.error(error.response?.status === 429 ? 'Has alcanzado el límite de mensajes. Inténtalo más tarde.' : 'No se pudo enviar. Revisa los campos o escríbeme por WhatsApp.')
     } finally {
       setLoading(false)
     }
@@ -96,7 +99,7 @@ export default function Contact() {
         <SectionTitle
           eyebrow="Contacto"
           title="Hablemos de tu proyecto"
-          subtitle="¿Tienes una idea? Cuéntamela. Respondo en menos de 24 horas."
+          subtitle="¿Tienes una idea? Cuéntamela. Puedes escribirme sobre desarrollo web, mantenimiento o servicios TI."
           inView={inView}
         />
 
@@ -104,7 +107,7 @@ export default function Contact() {
 
           {/* LEFT — Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-2 space-y-8"
@@ -211,21 +214,21 @@ export default function Contact() {
                 </span>
               </div>
               <p className="text-gray-text text-xs">
-                Tiempo de respuesta habitual: menos de 24 horas
+                Contacto profesional y servicios de Alpha
               </p>
             </div>
           </motion.div>
 
           {/* RIGHT — Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="lg:col-span-3"
           >
             {sent ? (
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
+                initial={false}
                 animate={{ scale: 1, opacity: 1 }}
                 className="h-full flex flex-col items-center justify-center p-12 rounded-2xl text-center"
                 style={{
@@ -246,7 +249,7 @@ export default function Contact() {
                   ¡Mensaje enviado!
                 </h3>
                 <p className="text-gray-text mb-6">
-                  Gracias por contactarme. Te responderé en menos de 24 horas.
+                  Gracias por contactarme. Revisaré tu mensaje.
                 </p>
                 <button
                   onClick={() => setSent(false)}
@@ -268,47 +271,47 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {/* Name */}
                   <div>
-                    <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+                    <label htmlFor="field-name" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                       Nombre *
                     </label>
-                    <input
+                    <input id="field-name"
                       type="text"
-                      name="name"
+                      name="name" required maxLength={150} aria-invalid={!!errors.name} aria-describedby={errors.name ? "error-name" : undefined}
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Tu nombre completo"
                       className={`form-input ${errors.name ? 'border-red-main' : ''}`}
                     />
                     {errors.name && (
-                      <p className="text-red-main text-xs mt-1">{errors.name}</p>
+                      <p id="error-name" role="alert" className="text-red-main text-xs mt-1">{errors.name}</p>
                     )}
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+                    <label htmlFor="field-email" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                       Email *
                     </label>
-                    <input
+                    <input id="field-email"
                       type="email"
-                      name="email"
+                      name="email" required maxLength={200} aria-invalid={!!errors.email} aria-describedby={errors.email ? "error-email" : undefined}
                       value={form.email}
                       onChange={handleChange}
                       placeholder="tu@email.com"
                       className={`form-input ${errors.email ? 'border-red-main' : ''}`}
                     />
                     {errors.email && (
-                      <p className="text-red-main text-xs mt-1">{errors.email}</p>
+                      <p id="error-email" role="alert" className="text-red-main text-xs mt-1">{errors.email}</p>
                     )}
                   </div>
                 </div>
 
                 {/* Service */}
                 <div>
-                  <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+                  <label htmlFor="field-service" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                     Servicio de interés
                   </label>
-                  <select
+                  <select id="field-service"
                     name="service"
                     value={form.service}
                     onChange={handleChange}
@@ -326,10 +329,10 @@ export default function Contact() {
 
                 {/* Subject */}
                 <div>
-                  <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+                  <label htmlFor="field-subject" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                     Asunto
                   </label>
-                  <input
+                  <input id="field-subject"
                     type="text"
                     name="subject"
                     value={form.subject}
@@ -341,11 +344,11 @@ export default function Contact() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
+                  <label htmlFor="field-message" className="block text-gray-text text-xs font-medium mb-2 uppercase tracking-wider">
                     Mensaje *
                   </label>
-                  <textarea
-                    name="message"
+                  <textarea id="field-message"
+                    name="message" required maxLength={3000} aria-invalid={!!errors.message} aria-describedby={errors.message ? "error-message" : undefined}
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Cuéntame sobre tu proyecto, presupuesto y plazos..."
@@ -353,7 +356,7 @@ export default function Contact() {
                     className={`form-input resize-none ${errors.message ? 'border-red-main' : ''}`}
                   />
                   {errors.message && (
-                    <p className="text-red-main text-xs mt-1">{errors.message}</p>
+                    <p id="error-message" role="alert" className="text-red-main text-xs mt-1">{errors.message}</p>
                   )}
                 </div>
 

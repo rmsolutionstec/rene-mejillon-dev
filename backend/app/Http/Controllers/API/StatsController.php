@@ -7,43 +7,26 @@ use App\Models\Contact;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Skill;
-use Illuminate\Support\Facades\DB;
 
 class StatsController extends Controller
 {
     public function index()
     {
-        $totalProjects  = Project::count();
-        $totalSkills    = Skill::count();
-        $totalServices  = Service::count();
-        $totalContacts  = Contact::count();
-        $unreadContacts = Contact::whereNull('read_at')->count();
+        $monthly = [];
+        $first = now()->startOfMonth()->subMonths(5);
+        for ($index = 0; $index < 6; $index++) {
+            $start = $first->copy()->addMonths($index);
+            $monthly[] = [
+                'month' => $start->format('Y-m'),
+                'total' => Contact::where('created_at', '>=', $start)->where('created_at', '<', $start->copy()->addMonth())->count(),
+            ];
+        }
 
-        // Monthly contacts (last 6 months) — PostgreSQL syntax
-        $monthly = Contact::select(
-                DB::raw("TO_CHAR(created_at, 'Mon') as month"),
-                DB::raw('COUNT(*) as total')
-            )
-            ->where('created_at', '>=', now()->subMonths(6))
-            ->groupBy(DB::raw("TO_CHAR(created_at, 'Mon')"), DB::raw("DATE_TRUNC('month', created_at)"))
-            ->orderBy(DB::raw("DATE_TRUNC('month', created_at)"))
-            ->get();
-
-        // Skills by category
-        $byCategory = Skill::select('category', DB::raw('COUNT(*) as total'))
-            ->groupBy('category')
-            ->get();
-
-        return response()->json([
-            'data' => [
-                'projects'      => $totalProjects,
-                'skills'        => $totalSkills,
-                'services'      => $totalServices,
-                'contacts'      => $totalContacts,
-                'unread'        => $unreadContacts,
-                'monthly'       => $monthly,
-                'byCategory'    => $byCategory,
-            ],
-        ]);
+        return response()->json(['data' => [
+            'projects' => Project::count(), 'skills' => Skill::count(), 'services' => Service::count(),
+            'contacts' => Contact::count(), 'unread' => Contact::whereNull('read_at')->count(),
+            'monthly' => $monthly,
+            'byCategory' => Skill::selectRaw('category, COUNT(*) as total')->groupBy('category')->get(),
+        ]]);
     }
 }

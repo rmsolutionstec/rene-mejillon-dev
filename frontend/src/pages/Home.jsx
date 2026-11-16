@@ -7,32 +7,32 @@ import Skills       from '../components/sections/Skills'
 import Projects     from '../components/sections/Projects'
 import Services     from '../components/sections/Services'
 import Experience   from '../components/sections/Experience'
-import Testimonials from '../components/sections/Testimonials'
+import { PortfolioProvider } from '../hooks/usePortfolio'
 import Contact      from '../components/sections/Contact'
 
 export default function Home() {
   return (
     <>
       <Helmet>
-        <title>René Mejillón | Full Stack Developer</title>
+        <title>René Mejillón | Desarrollador Full Stack</title>
         <meta
           name="description"
-          content="Portafolio profesional de René Mejillón. Full Stack Developer especialista en Laravel, React y MySQL. Construye soluciones digitales modernas y escalables."
+          content="Portafolio profesional de René Mejillón. Desarrollador full stack con PHP, Laravel, JavaScript, React y MySQL. Experiencia práctica desde 2023 y trayectoria TI desde 2008."
         />
       </Helmet>
 
-      <Navbar />
+      <a href="#contenido" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] btn-primary">Saltar al contenido</a><Navbar />
 
-      <main>
+      <PortfolioProvider><main id="contenido">
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Services />
         <Experience />
-        <Testimonials />
+
         <Contact />
-      </main>
+      </main></PortfolioProvider>
 
       <Footer />
     </>

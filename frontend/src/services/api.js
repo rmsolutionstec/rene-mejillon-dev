@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api'
+const BASE_URL = import.meta.env.VITE_API_URL || '/api'
 
 const api = axios.create({
   baseURL:  BASE_URL,
@@ -15,7 +15,7 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('admin_token')
-    if (token) config.headers.Authorization = `Bearer ${token}`
+    if (token && config.url?.startsWith('/admin/')) config.headers.Authorization = `Bearer ${token}`
     return config
   },
   (error) => Promise.reject(error),
@@ -25,7 +25,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    if (error.response?.status === 401 && error.config?.url?.startsWith('/admin/') && error.config.url !== '/admin/login') {
       localStorage.removeItem('admin_token')
       localStorage.removeItem('admin_user')
       window.location.href = '/admin/login'
@@ -38,11 +38,9 @@ api.interceptors.response.use(
    PUBLIC API
    ============================================================ */
 export const publicApi = {
-  getProjects:     () => api.get('/projects'),
-  getSkills:       () => api.get('/skills'),
-  getServices:     () => api.get('/services'),
-  getExperience:   () => api.get('/experience'),
-  getTestimonials: () => api.get('/testimonials'),
+  projects: (config) => api.get('/projects', config),
+  skills: (config) => api.get('/skills', config),
+  services: (config) => api.get('/services', config),
   sendContact:     (data) => api.post('/contact', data),
 }
 

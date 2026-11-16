@@ -1,28 +1,26 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import CountUpLib from 'react-countup'
-const CountUp = CountUpLib?.default ?? CountUpLib
 import {
   FaCode, FaRocket, FaHeart, FaAward,
-  FaGithub, FaLinkedin, FaDownload,
+  FaGithub, FaDownload,
 } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
-import { personalInfo } from '../../data/portfolioData'
+import { personalInfo, education } from '../../data/portfolioData'
 
 const HIGHLIGHTS = [
-  { Icon: FaCode,   label: 'Código limpio',     desc: 'Buenas prácticas siempre'    },
-  { Icon: FaRocket, label: 'Alto rendimiento',  desc: 'Optimizado desde el inicio'  },
-  { Icon: FaHeart,  label: 'Pasión genuina',    desc: 'El código es mi arte'        },
-  { Icon: FaAward,  label: 'Calidad garantizada',desc: '100% satisfacción cliente'  },
+  { Icon: FaCode, label: 'Desarrollo práctico', desc: 'Laravel y React desde 2023' },
+  { Icon: FaRocket, label: 'Mantenimiento', desc: 'Control de versiones y despliegues' },
+  { Icon: FaHeart, label: 'Atención directa', desc: 'Soporte y asesoría técnica' },
+  { Icon: FaAward, label: 'Formación', desc: 'Tecnólogo Superior en Desarrollo de Software' },
 ]
 
-const VALUES = ['Clean Code', 'SOLID Principles', 'TDD', 'Agile/Scrum', 'Clean Architecture', 'REST API Design', 'Security First', 'Performance Optimization', 'Testing Coverage', 'Documentation', 'Version Control', 'Code Review', 'DevOps Practices', 'Scalability', 'User Experience', 'Problem Solving', 'Continuous Learning', 'Team Collaboration']
+const VALUES = ['Modelado de datos', 'Validación y permisos', 'Componentes reutilizables', 'Git/GitHub', 'Documentación', 'Aprendizaje continuo']
 
 const STATS = [
-  { value: 10,  suffix: '+', label: 'Años en soporte e infraestructura TI' },
-  { value: 8,   suffix: '',  label: 'Proyectos técnicos desarrollados'     },
-  { value: 1,   suffix: '',  label: 'Título de 3er nivel en Software (TIC)'},
-  { value: 100, suffix: '%', label: 'Compromiso y código limpio'           },
+  { value: 2008, suffix: '', label: 'Trayectoria TI desde' },
+  { value: 2023, suffix: '', label: 'Laravel y React desde' },
+  { value: 2025, suffix: '', label: 'Finalización de estudios' },
+  { value: 2026, suffix: '', label: 'Registro del título' },
 ]
 
 export default function About() {
@@ -48,7 +46,7 @@ export default function About() {
         <SectionTitle
           eyebrow="Sobre mí"
           title="Quién soy"
-          subtitle="Desarrollador Full Stack apasionado por crear experiencias digitales extraordinarias"
+          subtitle="Desarrollo de software con una trayectoria previa en servicios TI."
           inView={inView}
         />
 
@@ -56,7 +54,7 @@ export default function About() {
 
           {/* LEFT — Text */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
@@ -93,6 +91,13 @@ export default function About() {
               {personalInfo.bioLong}
             </p>
 
+            <div className="glass-card p-5 space-y-2 text-gray-text">
+              <h3 className="font-semibold text-white-text">{education.degree}</h3>
+              <p>{education.institution} · {education.period}</p>
+              <p>Registro del título: {education.registered}</p>
+              <p>Formación complementaria: Desarrollador Back-end, Capacítate para el empleo. Finalizado el 24 de febrero de 2025 (106 horas).</p>
+              <p>Idiomas: español e inglés básico, sin nivel certificado.</p>
+            </div>
             {/* Values / methodology badges */}
             <div>
               <p className="text-white-text text-sm font-semibold mb-3 uppercase tracking-wider">
@@ -138,7 +143,7 @@ export default function About() {
 
             {/* Stats grid */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.3 }}
               className="grid grid-cols-2 gap-4"
@@ -146,14 +151,14 @@ export default function About() {
               {STATS.map(({ value, suffix, label }, i) => (
                 <motion.div
                   key={label}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={false}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ delay: 0.4 + i * 0.1 }}
                   className="glass-card p-5 text-center"
                 >
                   <div className="font-display font-black text-3xl text-red-main leading-none">
                     {inView && (
-                      <CountUp end={value} duration={2.5} delay={0.5} suffix={suffix} />
+                      <span>{value}{suffix}</span>
                     )}
                   </div>
                   <div className="text-gray-text text-sm mt-2">{label}</div>
@@ -163,7 +168,7 @@ export default function About() {
 
             {/* Highlight cards */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.5 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
@@ -171,7 +176,7 @@ export default function About() {
               {HIGHLIGHTS.map(({ Icon, label, desc }, i) => (
                 <motion.div
                   key={label}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.6 + i * 0.08 }}
                   className="flex items-start gap-3 p-4 rounded-xl transition-all duration-300 group cursor-default"
