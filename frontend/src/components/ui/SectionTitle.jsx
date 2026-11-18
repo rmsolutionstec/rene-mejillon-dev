@@ -31,14 +31,14 @@ export default function SectionTitle({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={false}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`${v.container} ${className}`}
     >
       {eyebrow && (
         <motion.span
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.1 }}
           className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-red-main mb-3"
@@ -57,7 +57,7 @@ export default function SectionTitle({
 
       {subtitle && (
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.25 }}
           className={`mt-5 text-gray-text leading-relaxed text-base max-w-2xl

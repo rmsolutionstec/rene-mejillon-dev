@@ -353,3 +353,5 @@ dialog { margin: auto; }
 /* Keep small white button labels above AA contrast on the red background. */
 .btn-primary { background: linear-gradient(135deg, #c40000, #990000); }
 .btn-primary:hover { background: linear-gradient(135deg, #d00000, #a30000); }
+
+section[id] { scroll-margin-top: 5rem; }

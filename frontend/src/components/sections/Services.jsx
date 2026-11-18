@@ -6,7 +6,7 @@ import {
   FaDesktop, FaCogs, FaServer,
 } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
-import { usePortfolio } from '../../hooks/usePortfolio'
+import { services } from '../../data/portfolioData'
 
 const ICON_MAP = {
   FaCode: FaCode, FaRocket: FaRocket, FaMobile: FaMobileAlt,
@@ -15,7 +15,6 @@ const ICON_MAP = {
 }
 
 export default function Services() {
-  const { services } = usePortfolio()
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08 })
 
   return (

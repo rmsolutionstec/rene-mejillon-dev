@@ -1,3 +1,5 @@
+> Documento histórico de la etapa con backend (15/11/2026). La arquitectura vigente es estática; consultar STATIC-PORTFOLIO.md, README.md y PROJECT.md antes de seguir instrucciones de API, administrador, seeders o Render.
+
 # AUDIT.md — Diagnóstico Técnico Inicial del Portafolio
 
 **Fecha:** 12 de Noviembre de 2026  

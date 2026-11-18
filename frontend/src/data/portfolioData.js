@@ -1,5 +1,11 @@
 import catalog from './catalog.json'
 export const personalInfo = catalog.personalInfo
+const subject = 'Consulta desde el portafolio'
+export const contactLinks = {
+  email: 'mailto:' + personalInfo.email + '?subject=' + encodeURIComponent(subject),
+  services: 'mailto:' + personalInfo.servicesEmail + '?subject=' + encodeURIComponent('Consulta sobre servicios de Alpha'),
+  whatsapp: 'https://wa.me/' + personalInfo.phone.replace(/\D/g, '') + '?text=' + encodeURIComponent('Hola René, vi tu portafolio y me gustaría conversar sobre un proyecto.'),
+}
 export const education = catalog.education
 export const experience = catalog.experience
 export const experienceLabels = { practice: 'Experiencia práctica', academic: 'Experiencia académica', learning: 'Aprendizaje aplicado' }

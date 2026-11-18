@@ -9,7 +9,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
 
 ROOT = Path(__file__).resolve().parents[1]
-catalog = json.loads((ROOT / 'backend/resources/portfolio.json').read_text(encoding='utf-8'))
+catalog = json.loads((ROOT / 'frontend/src/data/catalog.json').read_text(encoding='utf-8'))
 person = catalog['personalInfo']
 output = ROOT / 'output/pdf/Rene_Mejillon_CV_2026.pdf'
 output.parent.mkdir(parents=True, exist_ok=True)
@@ -61,7 +61,7 @@ for project in catalog['projects'][:2]:
     if project['tech']:
         text('Tecnologías: ' + ', '.join(project['tech']), 'CVSmall')
     text(project['live_url'], 'CVSmall')
-text('Portafolio personal (desde 2026): React/Vite en Vercel; API Laravel y panel administrativo implementados en el repositorio. Proyectos complementarios consultables en GitHub.', 'CVSmall')
+text('Portafolio personal (desde 2026): React/Vite en Vercel; contenido mantenido en Git y contacto directo por correo y WhatsApp. Proyectos complementarios consultables en GitHub.', 'CVSmall')
 section('Otros antecedentes')
 for key in ['church', 'guimun', 'coversa', 'andres']:
     job = next(item for item in catalog['experience'] if item['id'] == key)

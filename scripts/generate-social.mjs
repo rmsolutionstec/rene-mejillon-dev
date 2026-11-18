@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs'
-const { personalInfo: person } = JSON.parse(readFileSync(new URL('../backend/resources/portfolio.json', import.meta.url), 'utf8'))
+const { personalInfo: person } = JSON.parse(readFileSync(new URL('../frontend/src/data/catalog.json', import.meta.url), 'utf8'))
 const escape = (text) => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 writeFileSync(new URL('../frontend/public/images/social-card.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
 <rect width="1200" height="630" fill="#0a0a0a"/><path d="M850 0h350v630H650Z" fill="#251010"/>

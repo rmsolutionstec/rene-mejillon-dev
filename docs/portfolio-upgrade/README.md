@@ -1,3 +1,5 @@
+> Documento histórico de la etapa con backend (15/11/2026). La arquitectura vigente es estática; consultar STATIC-PORTFOLIO.md, README.md y PROJECT.md antes de seguir instrucciones de API, administrador, seeders o Render.
+
 # Documentación del Proyecto: Modernización del Portafolio Profesional de René Mejillón
 
 Esta carpeta (`docs/portfolio-upgrade/`) contiene la documentación maestra, auditoría técnica, backlog de tareas, arquitectura multiagente y guías de implementación para la actualización integral del portafolio profesional de **René Mejillón**.

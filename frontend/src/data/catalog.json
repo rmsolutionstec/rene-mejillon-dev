@@ -27,112 +27,96 @@
       "name": "Laravel",
       "category": "backend",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-laravel"
     },
     {
       "name": "React.js",
       "category": "frontend",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-react-js"
     },
     {
       "name": "PHP",
       "category": "backend",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-php"
     },
     {
       "name": "JavaScript / JSX",
       "category": "frontend",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-javascript-jsx"
     },
     {
       "name": "MySQL / MariaDB",
       "category": "database",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-mysql-mariadb"
     },
     {
       "name": "Inertia.js",
       "category": "frontend",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-inertia-js"
     },
     {
       "name": "HTML, CSS y Tailwind CSS",
       "category": "frontend",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-html-css-y-tailwind-css"
     },
     {
       "name": "Eloquent y SQL",
       "category": "database",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-eloquent-y-sql"
     },
     {
       "name": "Git / GitHub y despliegues Git/SSH",
       "category": "devops",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-git-github-y-despliegues-git-ssh"
     },
     {
       "name": "Soporte informático, redes LAN/Wi-Fi y CCTV",
       "category": "devops",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-soporte-inform-tico-redes-lan-wi-fi-y-cctv"
     },
     {
       "name": "Flujos de automatización con n8n",
       "category": "backend",
       "experience": "practice",
-      "is_published": true,
       "catalog_key": "skill-flujos-de-automatizaci-n-con-n8n"
     },
     {
       "name": "Python",
       "category": "backend",
       "experience": "academic",
-      "is_published": true,
       "catalog_key": "skill-python"
     },
     {
       "name": "Django",
       "category": "backend",
       "experience": "academic",
-      "is_published": true,
       "catalog_key": "skill-django"
     },
     {
       "name": "APIs REST y webhooks",
       "category": "backend",
       "experience": "learning",
-      "is_published": true,
       "catalog_key": "skill-apis-rest-y-webhooks"
     },
     {
       "name": "Linux",
       "category": "devops",
       "experience": "learning",
-      "is_published": true,
       "catalog_key": "skill-linux"
     },
     {
       "name": "Docker",
       "category": "devops",
       "experience": "learning",
-      "is_published": true,
       "catalog_key": "skill-docker"
     }
   ],
@@ -167,8 +151,7 @@
         "Cargos, pagos, abonos, saldos y cierre de caja; transacciones e idempotencia.",
         "Form Requests, Policies, roles, reportes PDF/CSV y tareas programadas.",
         "Despliegues Git/SSH en hosting compartido; mantenimiento continuo."
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "fundacion",
@@ -189,22 +172,20 @@
       "achievements": [
         "Información institucional y difusión de programas y ministerios.",
         "Galería, contacto y sección de donaciones."
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "portafolio",
       "title": "Portafolio René Mejillón",
-      "short_desc": "Portafolio React/Vite con API Laravel y panel administrativo.",
-      "description": "SPA en React 18 y Vite, publicada en Vercel. El repositorio implementa una API Laravel 12 con Sanctum para contacto y administración. El contenido inicial se sirve desde un catálogo compartido y se actualiza desde la API cuando está disponible.",
+      "short_desc": "Portafolio estático en React y Vite, publicado mediante Git en Vercel.",
+      "description": "Página personal en React 18 y Vite. El contenido se mantiene en el repositorio y Vercel publica las actualizaciones de Git. El contacto se realiza por correo y WhatsApp, sin cuentas de usuario ni base de datos.",
       "category": "Web App",
       "status": "En evolución",
       "tech": [
         "React 18",
         "Vite",
         "Tailwind CSS",
-        "Laravel 12",
-        "Sanctum"
+        "Framer Motion"
       ],
       "live_url": "https://rene-mejillon-dev.vercel.app/",
       "github_url": "https://github.com/rmsolutionstec/rene-mejillon-dev",
@@ -215,11 +196,10 @@
       "display_order": 2,
       "image": null,
       "achievements": [
-        "Contenido inicial estático con actualización por API y fallback ante fallos.",
-        "Panel administrativo y formulario de contacto.",
-        "Validaciones de contenido, pruebas y descarga del CV."
-      ],
-      "is_published": true
+        "Catálogo estático de proyectos, habilidades y servicios.",
+        "Contacto directo por correo y WhatsApp.",
+        "Currículum descargable y diseño adaptable a móvil."
+      ]
     },
     {
       "catalog_key": "alpha",
@@ -239,8 +219,7 @@
       "image": null,
       "achievements": [
         "Presentación de servicios y contacto de Alpha."
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "tts",
@@ -266,8 +245,7 @@
       "achievements": [
         "Interfaz de escritorio y exploración de síntesis de voz.",
         "Procesamiento de audio y subtítulos; alcance actual consultable en el repositorio."
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "studio",
@@ -289,8 +267,7 @@
       "image": null,
       "achievements": [
         "Validaciones, seguimiento de estados y recuperación de errores en flujos."
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "server",
@@ -313,8 +290,7 @@
       "image": null,
       "achievements": [
         "Exploración de servicios locales y mantenimiento de un entorno propio."
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "aniversario",
@@ -338,8 +314,7 @@
       "image": null,
       "achievements": [
         "Interacción y presentación de contenido multimedia."
-      ],
-      "is_published": true
+      ]
     }
   ],
   "services": [
@@ -354,8 +329,7 @@
         "Modelado de datos con MySQL y Eloquent",
         "Componentes y formularios responsive",
         "Usuarios, permisos y reportes"
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "maintenance",
@@ -368,8 +342,7 @@
         "Control de versiones con Git/GitHub",
         "Despliegues por Git/SSH en hosting",
         "Mantenimiento de contenido y formularios"
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "support",
@@ -382,8 +355,7 @@
         "Mantenimiento preventivo y correctivo",
         "Ensamblaje y configuración de equipos",
         "Redes LAN/Wi-Fi y soporte CCTV"
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "automation",
@@ -396,8 +368,7 @@
         "Validación de datos antes de ejecutar",
         "Seguimiento de estados",
         "Recuperación de errores"
-      ],
-      "is_published": true
+      ]
     },
     {
       "catalog_key": "media",
@@ -410,8 +381,7 @@
         "Piezas gráficas y publicitarias",
         "Edición y producción audiovisual",
         "Apoyo técnico en transmisiones en vivo"
-      ],
-      "is_published": true
+      ]
     }
   ],
   "experience": [

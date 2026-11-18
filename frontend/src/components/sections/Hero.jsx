@@ -4,7 +4,7 @@ import {
   FaGithub, FaLinkedin, FaWhatsapp,
   FaArrowDown, FaDownload, FaPaperPlane, FaEye,
 } from 'react-icons/fa'
-import { personalInfo } from '../../data/portfolioData'
+import { personalInfo, contactLinks } from '../../data/portfolioData'
 
 const STATS = [
   { value: 2008, suffix: '', label: 'Inicio de trayectoria TI' },
@@ -15,7 +15,7 @@ const STATS = [
 const SOCIALS = [
   { Icon: FaGithub, href: 'https://github.com/rmsolutionstec', label: 'GitHub' },
   { Icon: FaLinkedin, href: 'https://linkedin.com/in/renemejillon', label: 'LinkedIn' },
-  { Icon: FaWhatsapp, href: 'https://wa.me/593981817493', label: 'WhatsApp' },
+  { Icon: FaWhatsapp, href: contactLinks.whatsapp, label: 'WhatsApp' },
 ]
 
 /* ─── Terminal code typing variants ─── */

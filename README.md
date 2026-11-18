@@ -1,66 +1,46 @@
-# René Mejillón — portafolio profesional
+# Portafolio de René Mejillón
 
-Portafolio de René David Mejillón Torres, desarrollador full stack en Guayaquil, Ecuador. Experiencia práctica con Laravel y React desde 2023; trayectoria TI desde 2008. Datos contrastados con el perfil de LinkedIn y la información aportada por el propietario.
+Página personal estática en React 18, Vite 8, Tailwind CSS y Framer Motion, alojada en Vercel. Contacto por correo y WhatsApp. No utiliza API, panel administrativo, autenticación ni base de datos.
 
-- Web: https://rene-mejillon-dev.vercel.app/
+- Perfil: experiencia práctica con Laravel/React desde 2023 y trayectoria TI desde 2008.
+- Contacto profesional: renemejillon@alphaecuador.com.
+- Servicios Alpha: contacto@alphaecuador.com.
+- WhatsApp: +593 98 181 7493.
 - LinkedIn: https://www.linkedin.com/in/renemejillon/
-- GitHub: https://github.com/rmsolutionstec
-- Contacto profesional: renemejillon@alphaecuador.com
-- Servicios de Alpha: contacto@alphaecuador.com
+- Web: https://rene-mejillon-dev.vercel.app/
 
-## Arquitectura
+## Trabajar y publicar
 
-React 18 + Vite 8 + Tailwind CSS y React Router 7 en `frontend/`. Laravel 12 + Sanctum en `backend/`. PostgreSQL previsto en Render; SQLite para pruebas locales. La API se implementa en este repositorio; la configuración y disponibilidad de producción se comprueban antes del despliegue.
+Requisito: Node.js 24.
 
-El catálogo inicial vive en `backend/resources/portfolio.json`: los seeders leen ese archivo y el frontend importa una copia generada, versionada en frontend/src/data/catalog.json. Tras editar la fuente, ejecutar node scripts/sync-catalog.mjs; CI comprueba que no haya divergencias. Así el build de Vercel funciona íntegramente desde frontend sin acceder a su directorio hermano. La web muestra ese contenido inmediatamente y actualiza proyectos, habilidades y servicios desde la API compatible (contrato 2). Ante un error conserva el contenido inicial. Una colección vacía válida se muestra vacía.
-
-Academia Luz al Mundo y Fundación Clínica del Alma encabezan los ocho proyectos. Las habilidades distinguen experiencia práctica, académica y aprendizaje aplicado. Los testimonios quedan sin publicar hasta disponer de evidencia y autorización.
-
-## Desarrollo
-
-Requisitos: Node.js 24, Composer 2 y PHP 8.3 con SQLite para la suite de desarrollo. El contenedor de producción mantiene PHP 8.2 con dependencias de ejecución compatibles.
-
-```powershell
+```text
 cd frontend
 npm ci
 npm run dev
-```
-
-Configurar `VITE_API_URL` en el entorno de desarrollo o de Vercel; la plantilla `.env.example` contiene únicamente configuración pública. Si se omite, el cliente usa `/api` y el servidor Vite de desarrollo tiene un proxy hacia el backend local. Las variables `VITE_*` quedan expuestas en el JavaScript del navegador.
-
-Para una demostración aislada en Windows:
-
-```powershell
-./scripts/start-demo.ps1
-```
-
-El script crea exclusivamente `output/portfolio-demo.sqlite`, carga el catálogo e inicia la API en `http://127.0.0.1:8010`. Usa configuración de proceso y credenciales sintéticas (demo@example.test / Local-demo-only-2026!). No modifica archivos `.env` reales. En otra consola, construir el frontend con `VITE_API_URL=http://127.0.0.1:8010/api` y ejecutar `npm run preview -- --host 127.0.0.1 --port 4174`. Estas credenciales nunca se usan en producción.
-
-## Validación
-
-```powershell
-cd frontend
 npm run lint
 npm run build
 cd ..
 node scripts/check-content.mjs --dist
-cd backend
-php artisan test
-php vendor/bin/pint --test app routes database config/portfolio.php tests
 ```
 
-PHPUnit utiliza SQLite en memoria. En el entorno restringido de Windows, PHP puede informar que los archivos no son legibles aun existiendo: ejecutar la suite con los permisos normales del usuario, sin modificar vendor para evadir ese diagnóstico.
+Editar frontend/src/data/catalog.json para actualizar perfil, proyectos, servicios, habilidades y experiencia. Es la única fuente de contenido. El adaptador portfolioData.js prepara las vistas sin peticiones de red.
 
-GitHub Actions prepara lint, build, comprobación de catálogo/CV y pruebas PHP en SQLite y PostgreSQL. La ejecución remota y los checks obligatorios se verifican tras publicar la rama autorizada.
+La publicación conserva la configuración de Vercel: raíz frontend, comando npm run build y salida dist. No requiere variables VITE_API_URL ni archivos .env. Las variables antiguas de Vercel no afectan al código actual, pero pueden retirarse al revisar la configuración remota.
 
-## CV y privacidad
+Antes de integrar a main: revisar el contenido contra LinkedIn, ejecutar validaciones y obtener autorización expresa, porque el push activa el despliegue.
 
-El CV canónico está en `frontend/public/cv/rene-mejillon-cv.pdf`. Se mantiene el alias `Rene_Mejillon_CV_2026.pdf` con los mismos bytes. El generador reproducible es `scripts/generate_cv.py` (dependencias en `scripts/requirements-pdf.txt`); primero genera un candidato en `output/pdf/`. Revisar visualmente sus dos páginas antes de copiarlo a las rutas públicas.
+## Contacto y CV
 
-Los PDF están marcados como binarios en `.gitattributes`. No contienen cédula ni identificadores personales de certificados. Las antiguas capturas dejaron de distribuirse; la tarjeta social tiene contenido profesional y no incluye métricas de demostración. Para nuevas capturas usar una copia con datos sintéticos completos.
+El botón de correo abre el programa del visitante con asunto inicial. Si no tiene una aplicación configurada, puede copiar la dirección visible y escribir desde su proveedor de correo. WhatsApp abre una conversación con texto editable; no envía mensajes automáticamente.
 
-## Publicación
+Se han validado las URL, no la entrega real del correo ni que la cuenta WhatsApp esté operativa. Esa prueba requiere recepción por el propietario.
 
-Trabajar en ramas `codex/*`, validar localmente, revisar PR/Preview y obtener autorización antes de integrar a `main`, dado que esa integración activa Vercel. No se ejecutan seeders ni migraciones de producción de forma automática desde este trabajo.
+El PDF canónico está en frontend/public/cv/rene-mejillon-cv.pdf. Su alias Rene_Mejillon_CV_2026.pdf mantiene los mismos bytes. scripts/generate_cv.py genera un candidato desde el catálogo; renderizar y revisar antes de reemplazar los archivos públicos. Dependencias del generador: scripts/requirements-pdf.txt.
 
-Ver [PROJECT.md](PROJECT.md) y [reporte de implementación](docs/portfolio-upgrade/IMPLEMENTATION-REPORT.md) para el contrato, la migración y los controles pendientes de publicación.
+## Retiro del backend
+
+Laravel, scripts de demostración, cliente Axios, administrador, configuración de Render y CI PHP se retiran del código versionado. Son recuperables desde el commit dabf09b. Los archivos locales privados/ignorados del antiguo backend se conservan y la carpeta queda excluida de Git.
+
+No se han apagado servicios de Render ni eliminado bases remotas. Antes de hacerlo hay que confirmar qué servicios existen y exportar cualquier mensaje guardado.
+
+Detalles de validación y pendientes: docs/portfolio-upgrade/STATIC-PORTFOLIO.md.

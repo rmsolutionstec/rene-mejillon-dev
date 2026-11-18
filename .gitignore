@@ -55,3 +55,6 @@ tmp/
 .playwright/
 .playwright-cli/
 scratch/npm-audit.json
+
+# Retired local backend: preserve private settings and databases, never publish them.
+/backend/

@@ -2,9 +2,8 @@ import { useState } from 'react'
 import { FaCode, FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
 import Modal from '../ui/Modal'
-import { usePortfolio } from '../../hooks/usePortfolio'
+import { projects } from '../../data/portfolioData'
 export default function Projects() {
-  const { projects } = usePortfolio()
   const [selected, setSelected] = useState(null)
   const [category, setCategory] = useState('Todos')
   const categories = ['Todos', ...new Set(projects.map((project) => project.category))]

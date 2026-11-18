@@ -1,8 +1,6 @@
 import SectionTitle from '../ui/SectionTitle'
-import { groupSkills } from '../../data/portfolioData'
-import { usePortfolio } from '../../hooks/usePortfolio'
+import { groupSkills, skills } from '../../data/portfolioData'
 export default function Skills() {
-  const { skills } = usePortfolio()
   return <section id="habilidades" className="section-padding bg-black-deep">
     <div className="section-container">
       <SectionTitle eyebrow="Habilidades" title="Experiencia y aprendizaje" subtitle="Distingo el trabajo práctico, la formación académica y las herramientas que continúo aprendiendo." inView />

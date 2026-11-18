@@ -1,3 +1,5 @@
+> Documento histórico de la etapa con backend (15/11/2026). La arquitectura vigente es estática; consultar STATIC-PORTFOLIO.md, README.md y PROJECT.md antes de seguir instrucciones de API, administrador, seeders o Render.
+
 # QA local — 15/11/2026
 
 Ver IMPLEMENTATION-REPORT.md para resultados, evidencias y límites.

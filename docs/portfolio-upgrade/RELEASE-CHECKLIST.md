@@ -1,3 +1,5 @@
+> Documento histórico de la etapa con backend (15/11/2026). La arquitectura vigente es estática; consultar STATIC-PORTFOLIO.md, README.md y PROJECT.md antes de seguir instrucciones de API, administrador, seeders o Render.
+
 # Release preparado localmente — 15/11/2026
 
 **Regla:** no integrar a main, subir cambios que activen producción ni modificar la base de producción sin autorización expresa del propietario.

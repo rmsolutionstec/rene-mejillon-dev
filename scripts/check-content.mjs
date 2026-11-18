@@ -1,7 +1,6 @@
 import { readFileSync, existsSync } from 'node:fs'
 import assert from 'node:assert/strict'
-const catalog = JSON.parse(readFileSync(new URL('../backend/resources/portfolio.json', import.meta.url), 'utf8'))
-assert.deepEqual(JSON.parse(readFileSync(new URL('../frontend/src/data/catalog.json', import.meta.url), 'utf8')), catalog, 'Run node scripts/sync-catalog.mjs after editing the canonical catalog')
+const catalog = JSON.parse(readFileSync(new URL('../frontend/src/data/catalog.json', import.meta.url), 'utf8'))
 assert.equal(catalog.projects.length, 8)
 assert.equal(catalog.projects[0].catalog_key, 'academia')
 assert.equal(catalog.projects[1].catalog_key, 'fundacion')

@@ -1,3 +1,5 @@
+> Documento histórico de la etapa con backend (15/11/2026). La arquitectura vigente es estática; consultar STATIC-PORTFOLIO.md, README.md y PROJECT.md antes de seguir instrucciones de API, administrador, seeders o Render.
+
 # CV — implementación vigente, 15/11/2026
 
 El CV local se actualizó con la información confirmada por el propietario y su perfil documentado en LinkedIn. Se mantiene sujeto a revisión antes de publicar en producción.

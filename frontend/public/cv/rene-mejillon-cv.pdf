@@ -42,7 +42,7 @@ endobj
 endobj
 7 0 obj
 <<
-/Author (Ren\351 David Mejill\363n Torres) /CreationDate (D:20261115191723-05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115191723-05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+/Author (Ren\351 David Mejill\363n Torres) /CreationDate (D:20261118021259-05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261118021259-05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
   /Subject (\(unspecified\)) /Title (Ren\351 David Mejill\363n Torres - Curr\355culum) /Trapped /False
 >>
 endobj
@@ -227,7 +227,7 @@ endstream
 endobj
 10 0 obj
 <<
-/Length 5038
+/Length 5039
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -351,7 +351,7 @@ q
 1 0 0 1 48 416.8898 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Portafolio personal \(desde 2026\): React/Vite en Vercel; API Laravel y panel administrativo implementados en el repositorio.) Tj T* (Proyectos complementarios consultables en GitHub.) Tj T* ET
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Portafolio personal \(desde 2026\): React/Vite en Vercel; contenido mantenido en Git y contacto directo por correo y) Tj T* (WhatsApp. Proyectos complementarios consultables en GitHub.) Tj T* ET
 Q
 Q
 q
@@ -450,7 +450,7 @@ xref
 trailer
 <<
 /ID 
-[<afefa8f0090af50016b3ef78f0f11fb1><afefa8f0090af50016b3ef78f0f11fb1>]
+[<351ab3690d4d76d248c45c5e2a720824><351ab3690d4d76d248c45c5e2a720824>]
 % ReportLab generated PDF document -- digest (opensource)
 
 /Info 7 0 R
@@ -458,5 +458,5 @@ trailer
 /Size 11
 >>
 startxref
-11120
+11121
 %%EOF

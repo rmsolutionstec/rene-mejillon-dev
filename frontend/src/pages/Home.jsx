@@ -7,7 +7,6 @@ import Skills       from '../components/sections/Skills'
 import Projects     from '../components/sections/Projects'
 import Services     from '../components/sections/Services'
 import Experience   from '../components/sections/Experience'
-import { PortfolioProvider } from '../hooks/usePortfolio'
 import Contact      from '../components/sections/Contact'
 
 export default function Home() {
@@ -23,7 +22,7 @@ export default function Home() {
 
       <a href="#contenido" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] btn-primary">Saltar al contenido</a><Navbar />
 
-      <PortfolioProvider><main id="contenido">
+      <main id="contenido">
         <Hero />
         <About />
         <Skills />
@@ -32,7 +31,7 @@ export default function Home() {
         <Experience />
 
         <Contact />
-      </main></PortfolioProvider>
+      </main>
 
       <Footer />
     </>

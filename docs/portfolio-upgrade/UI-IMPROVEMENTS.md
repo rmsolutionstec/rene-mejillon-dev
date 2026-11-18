@@ -1,3 +1,5 @@
+> Documento histórico de la etapa con backend (15/11/2026). La arquitectura vigente es estática; consultar STATIC-PORTFOLIO.md, README.md y PROJECT.md antes de seguir instrucciones de API, administrador, seeders o Render.
+
 # Interfaz — resultado local, 15/11/2026
 
 Se conservan el fondo oscuro y acentos rojos. Hero y About priorizan el perfil full stack y fechas explícitas. El contenido aparece sin espera artificial ni animaciones de entrada que lo mantengan invisible.

@@ -1,3 +1,5 @@
+> Documento histórico de la etapa con backend (15/11/2026). La arquitectura vigente es estática; consultar STATIC-PORTFOLIO.md, README.md y PROJECT.md antes de seguir instrucciones de API, administrador, seeders o Render.
+
 # AGENTS-AND-SKILLS.md — Organización del Equipo Multiagente y Catálogo de Skills
 
 Este documento describe la estructura organizativa, responsabilidades, reglas de coordinación y catálogo de skills para agentes de Inteligencia Artificial (Antigravity, OpenAI Codex, Cursor, GitHub Copilot) que colaboren en el portafolio.

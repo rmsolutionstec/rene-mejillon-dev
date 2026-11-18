@@ -1,5 +1,7 @@
 # CONTENT-VERIFICATION.md — Matriz de Verificación de Contenido y Proyectos
 
+**Actualización técnica 18/11/2026:** este portafolio pasa a ser estático en React/Vite con contacto por correo/WhatsApp. Fuente de datos: frontend/src/data/catalog.json. Las menciones de Laravel/API/Render para este portafolio corresponden a su implementación anterior; no alteran los stacks de otros proyectos.
+
 Este documento registra el estado de verificación, fuente de evidencia y nivel de confiabilidad de cada afirmación profesional, habilidad y proyecto a mostrar en el portafolio de **René Mejillón**.
 
 ## Matriz vigente — alineación con LinkedIn, 15/11/2026
