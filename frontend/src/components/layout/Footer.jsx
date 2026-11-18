@@ -62,8 +62,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-text text-sm leading-relaxed">
-              Construyo soluciones digitales robustas y escalables. Especialista en
-              Laravel, React y MySQL.
+              Desarrollo aplicaciones web con PHP, Laravel, JavaScript, React y MySQL,
+              con una trayectoria previa en soporte e infraestructura TI.
             </p>
 
             {/* Social links */}

@@ -12,7 +12,7 @@ Los botones abren correo o WhatsApp con texto/asunto codificado; no envían auto
 
 Código Laravel anterior recuperable desde dabf09b. Solo se eliminan fuentes versionadas, no archivos .env privados, vendor, datos locales ni almacenamiento remoto. Los residuos locales de backend se ignoran en Git.
 
-El archivo ajeno test_edge.png se conserva sin seguimiento. No se modifica producción ni se apagan servicios de Render.
+El archivo ajeno test_edge.png se conserva sin seguimiento. El push a main fue autorizado el 18/11/2026; no se apagan servicios de Render.
 
 ## Validación
 
@@ -26,6 +26,8 @@ Fuente: https://github.com/advisories/GHSA-fc5q-39xc-vjpf (sin parche, consultad
 
 - El propietario debe probar recepción real del correo y disponibilidad de WhatsApp. No se envían mensajes de prueba sin instrucciones explícitas.
 - Revisar Render y exportar mensajes existentes antes de autorizar la baja de servicios.
-- Revisar el CV y la vista previa local; autorizar aparte push/despliegue.
+- Publicación autorizada el 18/11/2026; comprobar Vercel, contacto y CV tras el push.
 - GitHub Actions estuvo bloqueado por facturación; verificar la cuenta antes de depender de los checks.
 - Resolver la alerta de tooling cuando exista un parche compatible. No se afirma auditoría completa sin alertas.
+
+Revisión previa al push: corregido el texto heredado de especialista del footer. CI ejecuta lint/build/catálogo antes de auditar dependencias; la alerta alta sigue bloqueando el job y no se oculta. El chequeo valida además el alias PDF, ausencia de dependencias administrativas y redirección de rutas retiradas.

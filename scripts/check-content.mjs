@@ -16,6 +16,12 @@ for (const item of catalog.projects) {
 }
 const pdf = new URL('../frontend/public/cv/rene-mejillon-cv.pdf', import.meta.url)
 assert.equal(readFileSync(pdf).subarray(0, 5).toString(), '%PDF-')
+assert.deepEqual(readFileSync(new URL('../frontend/public/cv/Rene_Mejillon_CV_2026.pdf', import.meta.url)), readFileSync(pdf))
+const dependencies = JSON.parse(readFileSync(new URL('../frontend/package.json', import.meta.url), 'utf8')).dependencies
+for (const retired of ['axios', 'react-router-dom', 'recharts', 'zustand']) assert.ok(!(retired in dependencies))
+const vercel = JSON.parse(readFileSync(new URL('../frontend/vercel.json', import.meta.url), 'utf8'))
+assert.ok(!vercel.rewrites?.length)
+assert.ok(vercel.redirects.some((rule) => rule.source === '/admin/:path*' && rule.destination === '/'))
 if (process.argv.includes('--dist')) {
   const built = new URL('../frontend/dist/cv/rene-mejillon-cv.pdf', import.meta.url)
   assert.ok(existsSync(new URL('../frontend/dist/index.html', import.meta.url)))
